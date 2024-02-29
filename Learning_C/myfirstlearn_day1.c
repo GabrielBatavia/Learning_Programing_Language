@@ -5,3 +5,6 @@ int main() {
   return 0;
 }
 
+/*
+jsafiishoooooo komennnnnn
+*/
