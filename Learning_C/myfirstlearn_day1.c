@@ -20,6 +20,13 @@ int main() {
 
   printf("%d\n", myNum);
 
+  int myOtherNum = 23;
+
+  myNum = myOtherNum; // Assign the value of myOtherNum (23) to myNum
+
+  printf("%d\n", myOtherNum);
+
+  printf("%d\n", myNum);
 
   return 0;
 }
