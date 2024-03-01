@@ -28,6 +28,19 @@ int main() {
 
   printf("%d\n", myNum);
 
+  myNum = 100; // Assign the value of myNum
+
+  myOtherNum = myNum;
+
+  printf("%d\n", myOtherNum);
+
+  //add variable
+
+  int x = 5;
+  int y = 6;
+  int sum = x + y;
+  printf("%d", sum);
+
   return 0;
 }
 
