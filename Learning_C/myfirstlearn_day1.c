@@ -6,6 +6,10 @@ int main() {
   int myNum = 15;
   printf("%d", myNum);
 
+  float myFloat = 2.0f;
+  printf("%f", myFloat);
+
+
   return 0;
 }
 
