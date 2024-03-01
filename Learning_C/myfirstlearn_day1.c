@@ -41,6 +41,11 @@ int main() {
   int sum = x + y;
   printf("%d", sum);
 
+  //declare multi variable
+
+  int a = 5, b = 6, c = 50;
+  printf("%d", a + b + c);
+
   return 0;
 }
 
