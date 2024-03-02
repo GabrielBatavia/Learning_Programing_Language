@@ -83,10 +83,13 @@ int main() {
   printf("Cost per item : %.2f %c\n", cost_per_item, currency);
   printf("Total cost = %.2f %c\n", total_cost, currency);
 
+  // Automatic conversion: float to int
+  int myInt = 9.99;
 
+  printf("%d", myInt); // 9
 
-  return 0;
-}
+    return 0;
+  }
 
 /*
 jsafiishoooooo komennnnnn

@@ -1,9 +1,7 @@
-  int items = 50;
-  float cost_per_item = 9.99;
-  float total_cost = items * cost_per_item;
-  char currency = '$';
+  // Automatic conversion: float to int
+  int myInt = 9.99;
 
-  // Print variables
-  printf("Number of items: %d\n", items);
-  printf("Cost per item: %.2f %c\n", cost_per_item, currency);
-  printf("Total cost = %.2f %c\n", total_cost, currency);
+  printf("%d", myInt); // 9
+
+    return 0;
+  }
