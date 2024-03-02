@@ -50,6 +50,11 @@ int main() {
   d = f = g = 50;
   printf("%d\n", d + f + g);
 
+  char myText[] = "Hello";
+  printf("%s", myText);
+
+
+
   return 0;
 }
 
