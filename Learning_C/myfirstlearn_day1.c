@@ -56,11 +56,21 @@ int main() {
   double mydob = 19.99;
   printf("%lf\n", mydob);
 
-  float f1 = 35e3; \\Scientific Numbers
-  double d1 = 12E4;
+  float f1a = 35e3; //Scientific Numbers
+  double d1b = 12E4;
 
-  printf("%f\n", f1);
-  printf("%lf\n", d1);
+  printf("%f\n", f1a);
+  printf("%lf\n", d1b);
+
+  int myIntcek;
+  float myFloatcek;
+  double myDoublecek;
+  char myCharcek;
+
+  printf("%lu\n", sizeof(myIntcek));
+  printf("%lu\n", sizeof(myFloatcek));
+  printf("%lu\n", sizeof(myDoublecek));
+  printf("%lu\n", sizeof(myCharcek));
 
 
 
