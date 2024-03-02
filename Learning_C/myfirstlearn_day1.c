@@ -54,7 +54,13 @@ int main() {
   printf("%s\n", myText);
 
   double mydob = 19.99;
-  printf("%lf", mydob);
+  printf("%lf\n", mydob);
+
+  float f1 = 35e3; \\Scientific Numbers
+  double d1 = 12E4;
+
+  printf("%f\n", f1);
+  printf("%lf\n", d1);
 
 
 
