@@ -88,6 +88,9 @@ int main() {
 
   printf("%d", myInt); // 9
 
+  const int minutesPerHour = 60;
+  const float PI = 3.14;
+
     return 0;
   }
 
