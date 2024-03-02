@@ -51,7 +51,10 @@ int main() {
   printf("%d\n", d + f + g);
 
   char myText[] = "Hello";
-  printf("%s", myText);
+  printf("%s\n", myText);
+
+  double mydob = 19.99;
+  printf("%lf", mydob);
 
 
 
