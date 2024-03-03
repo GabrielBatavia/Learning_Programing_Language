@@ -110,9 +110,15 @@ int main() {
   bool isProgrammingFun = true;
   bool isFishTasty = false;
   printf("%d\n", isProgrammingFun);  // Returns 1 (true)
-  printf("%d", isFishTasty);         // Returns 0 (false)
+  printf("%d\n", isFishTasty);         // Returns 0 (false)
 
-  
+  printf("%d\n", 10 > 9);  // Returns 1 (true) because 10 is greater than 9
+  printf("%d\n", 10 > 11);  // Returns 0 (false) 
+
+  bool isHamburgerTasty = true;
+  bool isPizzaTasty = true;
+  // Find out if both hamburger and pizza is tasty
+  printf("%d", isHamburgerTasty == isPizzaTasty);
 
 
     return 0;

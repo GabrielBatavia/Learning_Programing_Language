@@ -1,6 +1,4 @@
-  bool isProgrammingFun = true;
-  bool isFishTasty = false;
+  bool isPizzaTasty = true;
 
-  // Return boolean values
-  printf("%d", isProgrammingFun);   // Returns 1 (true)
-  printf("%d", isFishTasty);        // Returns 0 (false)
+  // Find out if both hamburger and pizza is tasty
+  printf("%d", isHamburgerTasty == isPizzaTasty);
