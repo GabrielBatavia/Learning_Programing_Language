@@ -118,7 +118,18 @@ int main() {
   bool isHamburgerTasty = true;
   bool isPizzaTasty = true;
   // Find out if both hamburger and pizza is tasty
-  printf("%d", isHamburgerTasty == isPizzaTasty);
+  printf("%d\n", isHamburgerTasty == isPizzaTasty);
+
+  char myname[] = "Gabriel";
+  char namevote[] = "GabrEel";
+
+  if (myname == namevote) {
+    printf("you right!");
+  } else {
+    printf("you wrong!\n");
+    printf("the name is : %s\n", myname);
+  }
+
 
 
     return 0;
