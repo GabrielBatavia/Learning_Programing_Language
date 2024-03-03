@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main() {
   printf("Hello Sekai!\n\tI am learning \"C.\nAnd it is awesome!\n"); //aku komen
@@ -90,6 +91,29 @@ int main() {
 
   const int minutesPerHour = 60;
   const float PI = 3.14;
+
+  printf("%d\n", minutesPerHour);
+
+  int sum1 = 100 + 50;        // 150 (100 + 50)
+  int sum2 = sum1 + 250;      // 400 (150 + 250)
+  int sum3 = sum2 + sum2;     // 800 (400 + 400)
+  printf("%d\n", sum1);
+  printf("%d\n", sum2);
+  printf("%d\n", sum3);
+
+  int aku = 10;
+  aku *= 5;
+
+  printf("%d\n", aku);
+
+  // Create boolean variables
+  bool isProgrammingFun = true;
+  bool isFishTasty = false;
+  printf("%d\n", isProgrammingFun);  // Returns 1 (true)
+  printf("%d", isFishTasty);         // Returns 0 (false)
+
+  
+
 
     return 0;
   }

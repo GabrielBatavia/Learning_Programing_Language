@@ -1,7 +1,6 @@
-  // Automatic conversion: float to int
-  int myInt = 9.99;
+  bool isProgrammingFun = true;
+  bool isFishTasty = false;
 
-  printf("%d", myInt); // 9
-
-    return 0;
-  }
+  // Return boolean values
+  printf("%d", isProgrammingFun);   // Returns 1 (true)
+  printf("%d", isFishTasty);        // Returns 0 (false)
