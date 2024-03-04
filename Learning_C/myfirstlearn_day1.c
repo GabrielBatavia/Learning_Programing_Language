@@ -134,7 +134,7 @@ int main() {
   (time < 18) ? printf("Good day.\n") : printf("Good evening.\n");
 
   //learn switch cases
-  int day = 4;
+  int day = 8;
 
   switch (day) {
     case 1:
@@ -158,6 +158,8 @@ int main() {
     case 7:
       printf("Sunday");
       break;
+    default:
+      printf("Looking forward to the Weekend");
   }
 
 
