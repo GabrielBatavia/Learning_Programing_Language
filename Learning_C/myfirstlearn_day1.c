@@ -162,7 +162,20 @@ int main() {
       printf("Looking forward to the Weekend");
   }
 
+  //use while
+  int i = 0;
 
+  while (i < 5) {
+    printf("%d\n", i);
+    i++;
+  }
+
+  y = 10;
+
+  while (y > 5) {
+    printf("%d\n", y);
+    y--;
+  }
 
     return 0;
   }
