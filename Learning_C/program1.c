@@ -22,4 +22,7 @@ int main () {
         printf("nama ku adalah : %s\n", nama4);
     }
 
+    int time = 20;
+    (time < 18) ? printf("Good day.") : printf("Good evening.");
+
 }
