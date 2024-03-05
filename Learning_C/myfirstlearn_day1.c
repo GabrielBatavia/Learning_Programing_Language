@@ -253,6 +253,16 @@ int main() {
   }
 
 
+  while (i < 10) {
+    if (i == 4) {
+      i++;
+      continue;
+    }
+    printf("%d\n", i);
+    i++;
+  }
+
+
   return 0;
 
 
