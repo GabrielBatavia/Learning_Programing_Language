@@ -229,6 +229,14 @@ int main() {
     printf("%d x %d = %d\n", number, i, number * i);
   }
 
+  for (i = 0; i < 10; i++) {
+    if (i == 4) {
+      break;
+    }
+    printf("%d\n", i);
+  }
+
+
   return 0;
 
 
