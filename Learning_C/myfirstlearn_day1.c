@@ -222,6 +222,15 @@ int main() {
     }
   }
 
+  int number = 2;
+
+  // Print the multiplication table for the number 2
+  for (i = 1; i <= 10; i++) {
+    printf("%d x %d = %d\n", number, i, number * i);
+  }
+
+  return 0;
+
 
     return 0;
   }
