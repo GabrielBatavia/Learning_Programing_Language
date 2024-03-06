@@ -271,7 +271,8 @@ int main() {
   for (i = 0; i < 4; i++) {
     printf("%d\n", myNumbers2[i]);
   }
-
+  
+  printf("%lu", sizeof(myNumbers2));
 
 
 
