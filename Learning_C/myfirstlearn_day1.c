@@ -262,9 +262,7 @@ int main() {
     i++;
   }
 
-
-  return 0;
-
+  int myNumbers2[] = {25, 50, 75, 100};
 
     return 0;
   }
