@@ -272,7 +272,11 @@ int main() {
     printf("%d\n", myNumbers2[i]);
   }
   
-  printf("%lu", sizeof(myNumbers2));
+  printf("%lu\n", sizeof(myNumbers2));
+
+  int length = sizeof(myNumbers2);
+
+  printf("%d\n", length);  // Prints 5
 
 
 
