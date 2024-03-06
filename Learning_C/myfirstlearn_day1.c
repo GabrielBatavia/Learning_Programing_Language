@@ -263,7 +263,13 @@ int main() {
   }
 
   int myNumbers2[] = {25, 50, 75, 100};
-  printf("%d", myNumbers2[0]);
+  printf("%d\n", myNumbers2[0]);
+
+  myNumbers2[0] = 33;
+  printf("%d\n", myNumbers2[0]);
+
+
+
 
     return 0;
   }
