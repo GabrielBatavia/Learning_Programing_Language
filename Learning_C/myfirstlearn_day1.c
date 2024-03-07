@@ -321,7 +321,7 @@ int main() {
     }
   }
 
-
+  char greetings[] = "Hello World!";
 
 
     return 0;
