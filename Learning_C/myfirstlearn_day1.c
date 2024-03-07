@@ -332,7 +332,10 @@ int main() {
   }
 
   char greetingss[] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', '\0'};
-  printf("%s", greetingss);
+  printf("%s\n", greetingss);
+
+  printf("%lu\n", sizeof(greetings));   // Outputs 13
+  printf("%lu\n", sizeof(greetingss));
 
 
     return 0;
