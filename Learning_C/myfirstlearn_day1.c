@@ -278,6 +278,25 @@ int main() {
 
   printf("%d\n", length);  // Prints 5
 
+  // An array storing different ages
+  int ages1[] = {20, 22, 18, 35, 48, 26, 87, 70};
+
+  float avg;
+
+  // Get the length of the array
+  length = sizeof(ages1[0]);
+
+  // Loop through the elements of the array
+  for (int i = 0; i < length; i++) {
+    sum += ages1[i];
+  }
+
+  // Calculate the average by dividing the sum by the length
+  avg = sum / length;
+
+  // Print the average
+  printf("The average age is: %.2f", avg);
+
 
 
 
