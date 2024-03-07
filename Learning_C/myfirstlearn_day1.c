@@ -325,6 +325,12 @@ int main() {
 
   printf("%s\n", greetings);
 
+  char carName[] = "Volvo";
+
+  for (i = 0; i < 5; ++i) {
+    printf("%c\n", carName[i]);
+  }
+
 
     return 0;
   }
