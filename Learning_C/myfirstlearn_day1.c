@@ -295,7 +295,7 @@ int main() {
   avg = sum / length;
 
   // Print the average
-  printf("The average age is: %.2f", avg);
+  printf("The average age is: %.2f\n", avg);
 
   // Create a variable and assign the first array element of ages to it
   int lowestAge = ages1[0];
@@ -310,6 +310,10 @@ int main() {
   int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
 
   printf("%d", matrix[0][2]);  // Outputs 2
+
+  matrix[0][0] = 9;
+
+  printf("%d", matrix[0][0]);  // Now outputs 9 instead of 1
 
 
 
