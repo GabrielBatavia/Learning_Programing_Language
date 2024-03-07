@@ -297,6 +297,16 @@ int main() {
   // Print the average
   printf("The average age is: %.2f", avg);
 
+  // Create a variable and assign the first array element of ages to it
+  int lowestAge = ages1[0];
+
+  // Loop through the elements of the ages array to find the lowest age
+  for (int i = 0; i < length; i++) {
+    if (lowestAge > ages1[i]) {
+      lowestAge = ages1[i];
+    }
+  }
+
 
 
 
