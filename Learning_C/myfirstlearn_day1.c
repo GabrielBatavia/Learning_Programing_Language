@@ -331,6 +331,9 @@ int main() {
     printf("%c\n", carName[i]);
   }
 
+  char greetingss[] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', '\0'};
+  printf("%s", greetingss);
+
 
     return 0;
   }
