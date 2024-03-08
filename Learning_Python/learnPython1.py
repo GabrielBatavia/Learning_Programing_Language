@@ -16,3 +16,5 @@ print(b.islower())
 teks = "Halo semuanya, disini saya bersama dengan budi semuanya"
 x = teks.count("semuanya")
 print(x)
+
+print(100//20)
