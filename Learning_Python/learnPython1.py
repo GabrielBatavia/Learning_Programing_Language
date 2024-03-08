@@ -69,3 +69,12 @@ True
 False
 False
 True
+
+a = 1
+b = 1.0
+print(a == b)
+print(a is b)
+
+# output
+True
+False
