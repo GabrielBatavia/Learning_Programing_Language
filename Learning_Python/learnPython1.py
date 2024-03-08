@@ -108,3 +108,7 @@ else:
         print(num, 'adalah bilangan genap')
     else:
         print(num, 'adalah bilangan ganjil')
+        
+
+for i in range(5):
+    print('Welcome to everyone!!')
