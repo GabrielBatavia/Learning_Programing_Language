@@ -11,3 +11,8 @@ b = "halo"
 
 print(a.islower())
 print(b.islower())
+
+#count()-> Digunakan untuk menghitung berapa kali sebuah value muncul dalam sebuah string
+teks = "Halo semuanya, disini saya bersama dengan budi semuanya"
+x = teks.count("semuanya")
+print(x)
