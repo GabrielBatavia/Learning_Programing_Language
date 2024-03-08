@@ -87,3 +87,9 @@ age = 18 # diberikan kondisi bahwa age = 18
 
 if age < 20: # result dari age < 20 adalah True
     print('youth discount')
+
+num = 2
+if num % 2 == 0:
+    print('Nomor genap')
+if num % 3 == 0:
+    pass
