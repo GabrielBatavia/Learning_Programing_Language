@@ -75,6 +75,15 @@ b = 1.0
 print(a == b)
 print(a is b)
 
-# output
-True
-False
+print()
+
+print('aaa' in 'aaa-bbb-ccc')
+print('bbb' in 'aaa-bbb-ccc')
+print('ddd' in 'aaa-bbb-ccc')
+
+print()
+
+age = 18 # diberikan kondisi bahwa age = 18
+
+if age < 20: # result dari age < 20 adalah True
+    print('youth discount')
