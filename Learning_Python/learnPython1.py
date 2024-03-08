@@ -51,3 +51,8 @@ print(type(y))
 #output
 #<class 'str'>
 #<class 'str'>
+
+lebar = 10 # identifier untuk membedakan lebar persegi panjang dari data lain
+tinggi = 5 # identifier untuk membedakan tinggi persegi panjang dari data lain
+luas_kotak = lebar * tinggi
+print('luas area kotak = ', luas_kotak)
