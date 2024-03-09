@@ -151,3 +151,7 @@ print(y['z']) # mengakses key z dari dictionary y
 keys = ['a','b','c','d']
 x = dict.fromkeys(keys, 1000)
 print(x)
+
+days_list = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' , 'Sun' ] # list
+days_set = set(days_list) # membuat set dari list
+print(days_set)
