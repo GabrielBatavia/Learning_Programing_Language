@@ -149,5 +149,5 @@ print(y['z']) # mengakses key z dari dictionary y
 
 
 keys = ['a','b','c','d']
-x = dict.fromkeys(keys)
+x = dict.fromkeys(keys, 1000)
 print(x)
