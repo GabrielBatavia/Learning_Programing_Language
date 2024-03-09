@@ -167,3 +167,11 @@ for x in numbers:
 numbers = {2,1,3}
 if 1 in numbers:
   print("1 terdapat dalam set")
+  
+numbers = {1,2,3}
+numbers.add(4)
+print(numbers)
+
+numbers = {1,2,3,4}
+numbers.remove(3)
+print(numbers)
