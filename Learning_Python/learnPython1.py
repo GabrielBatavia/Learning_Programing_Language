@@ -146,3 +146,8 @@ y = dict.fromkeys(keys,100)
 y = defaultdict(int) # set default value sebagai integer
 
 print(y['z']) # mengakses key z dari dictionary y
+
+
+keys = ['a','b','c','d']
+x = dict.fromkeys(keys)
+print(x)
