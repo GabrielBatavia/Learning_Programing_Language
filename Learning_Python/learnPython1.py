@@ -137,3 +137,12 @@ y = copy.deepcopy(x) # deep copy menggunakan deepcopy function dari copy module
 y['a']['python'] = '2.7.15' # merubah value dari key a - python
 print(x)
 print(y)
+
+
+from collections import defaultdict # import default dict method dari collections module
+
+keys = ('a','b','c','d')
+y = dict.fromkeys(keys,100)
+y = defaultdict(int) # set default value sebagai integer
+
+print(y['z']) # mengakses key z dari dictionary y
