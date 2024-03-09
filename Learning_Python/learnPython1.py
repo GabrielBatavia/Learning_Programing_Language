@@ -112,3 +112,9 @@ else:
 
 for i in range(5):
     print('Welcome to everyone!!')
+    
+x = {'a': 0, 'b': 0 , 'c': 0, 'd': 0}
+y = x.copy()
+
+print(x is y) # cek apakah kedua dictionary merupakan objek yang sama
+print(x == y) # cek apakah key-value pairnya sama
