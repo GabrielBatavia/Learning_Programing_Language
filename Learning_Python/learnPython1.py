@@ -125,3 +125,15 @@ y = x.copy()
 y['a']['python'] = '2.7.15' # merubah value dari key a - python
 print(x)
 print(y)
+
+
+import copy
+#syntax
+
+x = {'a': {'python':'2.7'},'b':{'python':'3.6'}}
+import copy # memanggil copy module
+y = copy.deepcopy(x) # deep copy menggunakan deepcopy function dari copy module
+
+y['a']['python'] = '2.7.15' # merubah value dari key a - python
+print(x)
+print(y)
