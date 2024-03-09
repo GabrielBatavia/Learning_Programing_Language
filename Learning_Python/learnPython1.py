@@ -118,3 +118,10 @@ y = x.copy()
 
 print(x is y) # cek apakah kedua dictionary merupakan objek yang sama
 print(x == y) # cek apakah key-value pairnya sama
+
+x = {'a': {'python':'2.7'},'b':{'python':'3.6'}}
+y = x.copy()
+
+y['a']['python'] = '2.7.15' # merubah value dari key a - python
+print(x)
+print(y)
