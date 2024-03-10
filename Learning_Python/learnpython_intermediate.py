@@ -9,3 +9,8 @@ print('Hasil akar-akarnya adalah', result1, 'atau', result2, 'dan pertambahan ny
 
 add = lambda x, y : x + y
 print("total dari 100 dan 200 adalah:",add(100,200))
+
+list_umur = [34,39,20,18,13,54]
+print("Umur yang dewasa: ")
+for a in filter(lambda x: x >= 19, list_umur): # filter umur menggunakan fungsi filter
+    print(a,end = ' ')
