@@ -22,3 +22,10 @@ a = [1,2,3,4,5,6,7]
 a_kuadrat = list(map(lambda x: x **2, a))
 print(a_kuadrat)
 
+from functools import reduce
+# Returns the sum of two elements
+def sumTwo(a,b):
+    return a+b
+
+result = reduce(sumTwo, [1, 2, 3, 4])
+print(result)
