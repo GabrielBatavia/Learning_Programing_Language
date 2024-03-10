@@ -27,5 +27,10 @@ from functools import reduce
 def sumTwo(a,b):
     return a+b
 
-result = reduce(sumTwo, [1, 2, 3, 4])
+result = reduce(sumTwo, [1, 2, 3, 4, 10, 12])
 print(result)
+
+
+a = [1,2,3,4]
+n = reduce(lambda x,y : x + y, a)
+print(n)
