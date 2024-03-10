@@ -34,3 +34,19 @@ print(result)
 a = [1,2,3,4]
 n = reduce(lambda x,y : x + y, a)
 print(n)
+
+
+def decorate(style = 'italic'):
+  def italic(s):
+    return '<i>' + s + '<i>'
+  def bold(s):
+    return '<b>' + s + '<b>'
+  if style == 'italic':
+    return italic
+  else:
+    return bold
+    
+dec = decorate()
+print(dec('hello'))
+dec2 = decorate('bold')
+print(dec2('hello'))
