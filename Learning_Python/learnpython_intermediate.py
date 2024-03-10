@@ -14,3 +14,11 @@ list_umur = [34,39,20,18,13,54]
 print("Umur yang dewasa: ")
 for a in filter(lambda x: x >= 19, list_umur): # filter umur menggunakan fungsi filter
     print(a,end = ' ')
+    
+print()
+
+a = [1,2,3,4,5,6,7]
+
+a_kuadrat = list(map(lambda x: x **2, a))
+print(a_kuadrat)
+
