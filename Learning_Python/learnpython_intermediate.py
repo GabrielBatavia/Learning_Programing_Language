@@ -1,23 +1,8 @@
-def menyapaPelanggan(*names):
-    for name in names:
-        print ('Halo', name, 'Selamat Datang Ditoko Kami')
-        
-    return(names)
+def get_root(a,b,c):
+  r1 = (-b + (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
+  r2 = (-b - (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
+  r3 = (a + b + c)
+  return r1,r2,23
 
-menyapaPelanggan('Anna', 'Clara', 'Gabriel')
-
-names = input('Masukkan Nama Anda : ')
-
-menyapaPelanggan(names)
-
-def redmi(namaProduk, harga):
-    print("Selamat Anda Telah Membeli")
-    
-    print("Handphone yang anda beli : " , namaProduk)
-    print("Harga yang anda beli     : " , str(harga))
-    return(namaProduk, harga)
-
-namaProduk = input("Masukkan nama Handphone yang anda ingin beli : ")
-harga = float(input("Masukkan harga Handphone yang anda ingin dibeli   : "))
-
-redmi(namaProduk, harga)
+result1, result2, result3 = get_root(a=1,c=-8,b=2)
+print('Hasil akar-akarnya adalah', result1, 'atau', result2, 'dan pertambahan nya adalah', result3)
