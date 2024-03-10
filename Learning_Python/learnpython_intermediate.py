@@ -50,3 +50,12 @@ dec = decorate()
 print(dec('hello'))
 dec2 = decorate('bold')
 print(dec2('hello'))
+
+def another_func():
+  print('hello')
+  
+def outer_func():
+  return another_func()
+  
+outer_func()
+
