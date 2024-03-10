@@ -6,3 +6,6 @@ def get_root(a,b,c):
 
 result1, result2, result3 = get_root(a=1,c=-8,b=2)
 print('Hasil akar-akarnya adalah', result1, 'atau', result2, 'dan pertambahan nya adalah', result3)
+
+add = lambda x, y : x + y
+print("total dari 100 dan 200 adalah:",add(100,200))
