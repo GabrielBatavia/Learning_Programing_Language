@@ -103,3 +103,20 @@ class Cat: # membuat class Cat
 
 nobi = Cat() # membuat sebuah instance dari Cat
 nobi.meow() # setelah membuat object dari Cat, kita bisa memanggil method meow 
+
+
+
+#inisialisasi konstruktor
+
+class Cat:
+  def __init__(self,name,color): # menginisialisasi instance dengan constructor
+    self.name = name
+    self.color = color
+
+nobi = Cat('nobi','black') # membuat instance dari kelas Cat dengan nama nabi dan warna hitam
+nero = Cat('nero','white')
+
+print(nobi.name)
+print(nobi.color)
+print(nero.name)
+print(nero.color)
