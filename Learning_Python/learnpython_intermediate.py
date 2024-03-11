@@ -120,3 +120,25 @@ print(nobi.name)
 print(nobi.color)
 print(nero.name)
 print(nero.color)
+
+
+
+
+
+
+class Circle:
+  def __init__(self,name,radius,PI):
+    self.__name = name # instance variable
+    self.__radius = radius # instance variable
+    self.__PI = PI
+  
+  # menghitung area sebuah lingkaran dengan pi * r kuadrat
+  def area(self):
+    return self.__PI * self.__radius ** 2
+
+c1 = Circle("C1",4,3.14)
+print("Area dari c1:",c1.area())
+c2 = Circle("C2",6,3.141)
+print("Area dari c2:",c2.area())
+c3 = Circle("C3",6,3.1415)
+print("Area dari c3:",c3.area())
