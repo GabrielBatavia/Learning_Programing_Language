@@ -80,3 +80,9 @@ def closure_calc():
   
 c = closure_calc()
 print(c(1),c(2),c(3))
+
+def fungsi_luar(x):
+    a = 10
+    def addition(z):
+        return a + z
+    return addition(x)
