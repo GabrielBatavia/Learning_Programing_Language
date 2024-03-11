@@ -68,4 +68,5 @@ def print_counter():
 
 counter = 100
 print_counter()
+counter = 150
 print('counter diluar fungsi = ',counter) # nilai counter diluar fungsi
