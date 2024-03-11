@@ -70,3 +70,13 @@ counter = 100
 print_counter()
 counter = 150
 print('counter diluar fungsi = ',counter) # nilai counter diluar fungsi
+
+
+def closure_calc():
+  a = 2
+  def mult(x):
+    return a * x
+  return mult
+  
+c = closure_calc()
+print(c(1),c(2),c(3))
