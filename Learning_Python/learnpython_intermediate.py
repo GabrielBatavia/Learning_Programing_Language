@@ -86,3 +86,11 @@ def fungsi_luar(x):
     def addition(z):
         return a + z
     return addition(x)
+  
+
+#declare class
+class Cat: # membuat class Cat
+  pass # menggunakan pass statement 
+
+nobi = Cat() # membuat sebuah instance dari Cat
+print(nobi)
