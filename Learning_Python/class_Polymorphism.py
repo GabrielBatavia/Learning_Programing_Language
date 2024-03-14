@@ -54,3 +54,9 @@ class Anjing():
    
     def warna_tubuh(self): 
       print("Warna tubuh anjing pada umumnya adalah hitam") 
+      
+obj1 = Kucing() 
+obj2 = Anjing() 
+for type in (obj1, obj2): # creating a loop to iterate through the obj1, obj2
+    type.harapan_hidup() 
+    type.warna_tubuh() 
