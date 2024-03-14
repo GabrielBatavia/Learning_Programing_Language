@@ -17,3 +17,12 @@ class penguin(Bird):
 obj_bird = Bird()
 obj_parr = parrot()
 obj_peng = penguin()
+
+obj_bird.intro()
+obj_bird.flight()
+ 
+obj_parr.intro()
+obj_parr.flight()
+ 
+obj_peng.intro()
+obj_peng.flight()
