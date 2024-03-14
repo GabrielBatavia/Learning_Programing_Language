@@ -13,3 +13,5 @@ print('nama dari employee', employee1.nama)
 print('gaji dari employee',employee1.gaji)
 print('id dari employee',employee1.id)
 #print('gaji dari person',person1.gaji)
+
+
