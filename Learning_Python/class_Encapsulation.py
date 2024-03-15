@@ -30,3 +30,10 @@ class Orang:
         print(self.__age)
  
 orang_obj = Orang('Budi', 30)
+
+#mengakses melalui metode
+orang_obj.tampilkan()
+
+#mengakses langsung variable
+print(orang_obj.name)
+print(orang_obj.__age)
