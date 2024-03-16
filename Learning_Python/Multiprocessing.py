@@ -39,4 +39,4 @@ if __name__ == "__main__":
  
 print("Bagus hasilnya")
 print("bagus")
- 
+print(p1)
