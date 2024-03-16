@@ -43,4 +43,4 @@ if __name__ == "__main__":
 def print(total):
     for x in range(total):
         print("Hello from dynamic-sleep interval, pengulangan ke-{}".format(x))
-        time.sleep(x) # fungsi akan berhenti selama x second, akan berubah2 secara dinamis
+        #time.sleep(x) # fungsi akan berhenti selama x second, akan berubah2 secara dinamis
