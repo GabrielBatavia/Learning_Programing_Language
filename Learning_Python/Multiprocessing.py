@@ -36,4 +36,5 @@ if __name__ == "__main__":
 
 	# both threads completely executed
 	print("Selesai!")
+    print("Bagus hasilnya")
  
