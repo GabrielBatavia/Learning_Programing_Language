@@ -33,4 +33,6 @@ def laptop(namaProduk, harga):
 namaProduk = input("Masukkan nama Laptop yang anda ingin beli : ")
 harga = float(input("Masukkan harga Handphone yang anda ingin dibeli   : "))
 
+laptop(namaProduk, harga)
+
 
