@@ -12,3 +12,6 @@ S = [50,30,40,10,20]
 print("Sebelum di sortir", S)
 selectionsort(S)
 print("Setelah di sortir", S)
+
+
+print("Program selesai")
