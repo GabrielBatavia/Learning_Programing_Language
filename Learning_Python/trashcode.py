@@ -38,4 +38,4 @@ laptop(namaProduk, harga)
 print("Terimkasih sudah Berbelanja " + names)
 print(" Silahkan datang kembali " + names + " Dilain waktu ")
 
-
+print(" Semoga hari anda menyenangkan")
