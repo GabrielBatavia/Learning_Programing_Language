@@ -35,4 +35,6 @@ harga = float(input("Masukkan harga Handphone yang anda ingin dibeli   : "))
 
 laptop(namaProduk, harga)
 
+print("Terimkasih sudah Berbelanja")
+
 
