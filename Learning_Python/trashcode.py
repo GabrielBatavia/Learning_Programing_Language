@@ -30,7 +30,7 @@ def laptop(namaProduk, harga):
     print("Harga yang anda beli     : " , str(harga))
     return(namaProduk, harga)
 
-namaProduk = input("Masukkan nama Handphone yang anda ingin beli : ")
+namaProduk = input("Masukkan nama Laptop yang anda ingin beli : ")
 harga = float(input("Masukkan harga Handphone yang anda ingin dibeli   : "))
 
 
