@@ -43,3 +43,14 @@ print(type(a))
 a = int(a)
 print(a + c)
 print(type(a))
+
+# Math operations
+
+print(3 + 4)
+print(3 - 4)
+print(3 / 4)
+print(3 * 4)
+print(3 % 4)
+print(3 ** 4)
+
+print(3 * (3 + 3) / 3 - 3)
