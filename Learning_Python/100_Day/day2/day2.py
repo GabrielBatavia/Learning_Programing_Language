@@ -26,3 +26,20 @@ False
 
 print(True)
 print(False)
+
+
+# Check the type of data
+
+print(type(a))
+
+print(type(d))
+
+# Change the type of data
+
+a = str(a)
+print("Hallo you number " + a)
+print(type(a))
+
+a = int(a)
+print(a + c)
+print(type(a))
