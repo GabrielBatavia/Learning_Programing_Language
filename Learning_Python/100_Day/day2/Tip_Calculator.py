@@ -1,16 +1,13 @@
 # Day 2 Project
 
 print('Welcome to Tip calculator')
-print("Please Input your bill :")
-bill = input()
+bill = float(input("Please Input your bill $"))
 
-print('How much tip would you like to  give? 10, 12, or 15?')
-tip = input()
+tip = input("How much tip would you like to  give? 10, 12, or 15?")
 
-cost_total = int(bill) * (int(tip) / 100 + 1)
-print(f'You should pay {round(cost_total, 3)} including the tip')
+cost_total = bill + (int(tip) / 100 * bill)
+print(f'You should pay {round(cost_total, 2)} including the tip')
 
-print('')
 print("Please input how many people will be pay")
 num_people = input()
 
