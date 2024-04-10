@@ -68,3 +68,16 @@ result = 4 / 2
 result /= 2 # short hand instaed make result = result / 2
 print(result)
 
+
+# F String
+
+# this primitive way and painful
+score = 0
+print("your score is", str(score))
+
+height = 1.8
+isWinning = True
+
+# use F string
+print(f"your score is {score}, your heightis {height}, and you are winning is {isWinning}")
+
