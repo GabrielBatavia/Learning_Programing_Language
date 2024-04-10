@@ -12,5 +12,5 @@ print("Please input how many people will be pay")
 num_people = input()
 
 split_bill = cost_total / int(num_people)
-split_bill = round(split_bill, 2)
-print(f'Each person will pay {split_bill}')
+split_bill = "{:.2f}".format(split_bill)
+print(f'Each person will pay ${split_bill}')
