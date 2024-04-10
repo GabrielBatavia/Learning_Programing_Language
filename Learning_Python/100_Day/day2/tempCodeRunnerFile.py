@@ -1,2 +1,2 @@
-
-True
+)
+weight_norm = int(weight)
