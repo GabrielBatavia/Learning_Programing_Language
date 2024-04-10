@@ -54,3 +54,17 @@ print(3 % 4)
 print(3 ** 4)
 
 print(3 * (3 + 3) / 3 - 3)
+
+# Number manipulation
+print(8 / 3)
+print(int(8 / 3))
+print(round(8 / 3))
+print(round(8 / 3, 2)) # number after come is for decide number of place in round
+print(round(8 / 3, 3))
+
+print(8 // 3) # Will make without float numbers
+
+result = 4 / 2
+result /= 2 # short hand instaed make result = result / 2
+print(result)
+
