@@ -25,3 +25,16 @@ states_of_america = ["Delaware", "Pennsylvania", "Raaahh"]
 
 print(states_of_america[0])
 
+# way to change contain list
+states_of_america[1] = "Penn"
+
+print(states_of_america)
+
+# way to add something to the list
+states_of_america.append("Angelaland")
+
+print(states_of_america)
+
+# extend the list
+states_of_america.extend(["Angelaland", "Jackbauer"])
+print(states_of_america)
