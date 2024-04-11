@@ -16,6 +16,12 @@ random_float *= random_integer
 print(random_float)
 
 # we can use it to our past project to get really easy way
-love_score = random.radint(1, 100)
+love_score = random.randint(1, 100)
 print(f"Your love score is {love_score}")
+
+# List
+
+states_of_america = ["Delaware", "Pennsylvania", "Raaahh"]
+
+print(states_of_america[0])
 
