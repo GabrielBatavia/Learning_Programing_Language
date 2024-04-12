@@ -11,3 +11,9 @@ for fruit in fruits:
     #fruits.append("Ella")
 
  
+ # use for loop without list (for loop with range)
+for number in range(1, 10):
+    print(number)
+
+for number in range(1, 10, 2):
+    print(number)
