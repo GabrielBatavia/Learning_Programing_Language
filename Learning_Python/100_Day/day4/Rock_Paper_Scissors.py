@@ -3,7 +3,8 @@ import random
 
 print("Welcome to the Rock Paper Scissors Program")
 
-user_guess = int(input("Please enter you guess: 1.Rock, 2.Paper, 3.Scissors: "))
+print("Please enter you guess:\n1 for Rock \n2 for Paper \n3 for Scissors")
+user_guess = int(input("type your choice : "))
 
 if user_guess == 1:
     print("""
@@ -41,6 +42,7 @@ else :
 
 program_answer = random.randint(1, 3)
 
+print("Computer Choose : ")
 if program_answer == 1:
     print("""
     _______
