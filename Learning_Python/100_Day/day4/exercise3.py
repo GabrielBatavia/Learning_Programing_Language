@@ -15,4 +15,7 @@ abc = ["a", "b", "c"]
 
 letter_index = abc.index(letter)
 
-print(letter_index)
+number_index = int(position[1]) - 1
+
+map[number_index][len(letter_index)] = "x"
+print(number_index)
