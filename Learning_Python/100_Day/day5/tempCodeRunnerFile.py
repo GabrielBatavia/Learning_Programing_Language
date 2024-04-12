@@ -1,0 +1,1 @@
+ts[n] = int(student_heights[n])
