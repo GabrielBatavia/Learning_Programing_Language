@@ -32,6 +32,7 @@ print(f"Your easy version password : {easy_password}")
 
 # Hard level version
 
+"""
 all_nr = int(nr_letters) + int(nr_numbers) + int(nr_symbols) 
 all_sources = [letters, symbols, numbers]
 
@@ -44,4 +45,26 @@ for n in range(0, all_nr):
     hard_password += random_password
     
 print(f"Your hard version password : {hard_password}")
+"""
 
+all_nr = int(nr_letters) + int(nr_numbers) + int(nr_symbols) 
+hard_password = []
+random_hard_password = ""
+
+for n in range (0, nr_letters):
+    random_letters = random.choice(letters)
+    hard_password.append(random_letters)
+    
+for n in range(0, nr_symbols):
+    random_symbols = random.choice(symbols)
+    hard_password.append(random_symbols)
+
+for n in range(0, nr_numbers):
+    random_numbers = random.choice(numbers)
+    hard_password.append(random_numbers)
+
+for n in range(0, all_nr):
+    random_password = random.choice(hard_password)
+    random_hard_password += random_password
+
+print(f"Your hard version password : {random_hard_password}")
