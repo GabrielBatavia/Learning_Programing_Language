@@ -1,5 +1,6 @@
 # Step 4
 import random
+lives = 6
 
 word_list = ["ardvark", "baboon", "camel"]
 
@@ -39,6 +40,14 @@ while not end_of_game:
     
     if "_" not in display:
         end_of_game = True
+    
+    if user_choose not in chosen_list:
+        lives -= 1
+    
+    if lives == 0:
+        end_of_game = True
+    
+    print(f"Your lives are {lives}")
 
 print("")
 print(display)
