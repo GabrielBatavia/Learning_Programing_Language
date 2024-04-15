@@ -2,8 +2,7 @@
 import random
 lives = 6
 from hangman_art import stages
-
-word_list = ["ardvark", "baboon", "camel"]
+from hangman_words import word_list 
 
 # The program code
 chosen_word = random.choice(word_list)
