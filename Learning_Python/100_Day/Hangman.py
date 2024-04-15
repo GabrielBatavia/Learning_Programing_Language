@@ -21,7 +21,7 @@ print("")
 end_of_game = False
 
 while not end_of_game:
-
+    print("")
     user_choose = input("Guess a letter : ")
     user_choose = user_choose.lower()
 
@@ -30,22 +30,18 @@ while not end_of_game:
     for n in range(0, len(chosen_list)):
         letter = chosen_list[n]
         if user_choose == chosen_list[n]:
-            print(f"{chosen_list[n]}", end="", flush=True)
-            display[n] = letter
-        else:
-            print("_ ", end="", flush=True)
-            
-    print("")
-    print(display)
+            display[n] = letter          
     
     if "_" not in display:
         end_of_game = True
-    
-    if user_choose not in chosen_list:
+    elif user_choose not in chosen_list:
         lives -= 1
-    
-    if lives == 0:
-        end_of_game = True
+        print(f"the letter {user_choose} not match")
+        if lives == 0:
+            end_of_game = True
+            print("You Lose...Game Over!")
+
+    print(f"{' '.join(display)}")
     
     print(f"Your lives are {lives}")
 
