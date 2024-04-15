@@ -3,13 +3,16 @@ import random
 lives = 6
 from hangman_art import stages
 from hangman_words import word_list 
+from hangman_art import logo
+
+print(logo)
 
 # The program code
 chosen_word = random.choice(word_list)
 chosen_list = list(chosen_word)
 
 # Testing code
-print(f"Pssst, the solution is {chosen_word}")
+# print(f"Pssst, the solution is {chosen_word}")
 
 # Create an empety list called display
 display = []
