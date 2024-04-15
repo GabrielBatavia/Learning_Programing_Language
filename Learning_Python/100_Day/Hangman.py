@@ -1,4 +1,4 @@
-# Step 2
+# Step 4
 import random
 
 word_list = ["ardvark", "baboon", "camel"]
@@ -14,21 +14,31 @@ display = []
 for n in range(0, len(chosen_list)):
     print("_ ", end="", flush=True)
     display += "_"
-
-
+    
 print("")
-user_choose = input("Guess a letter : ")
-user_choose = user_choose.lower()
 
-# reveal the letter if its true
+end_of_game = False
 
-for n in range(0, len(chosen_list)):
-    letter = chosen_list[n]
-    if user_choose == chosen_list[n]:
-        print(f"{chosen_list[n]}", end="", flush=True)
-        display[n] = letter
-    else:
-        print("_ ", end="", flush=True)
+while not end_of_game:
+
+    user_choose = input("Guess a letter : ")
+    user_choose = user_choose.lower()
+
+    # reveal the letter if its true
+
+    for n in range(0, len(chosen_list)):
+        letter = chosen_list[n]
+        if user_choose == chosen_list[n]:
+            print(f"{chosen_list[n]}", end="", flush=True)
+            display[n] = letter
+        else:
+            print("_ ", end="", flush=True)
+            
+    print("")
+    print(display)
+    
+    if "_" not in display:
+        end_of_game = True
 
 print("")
 print(display)
