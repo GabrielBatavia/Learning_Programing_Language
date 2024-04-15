@@ -1,9 +1,67 @@
-# Step 4
+# Resource
 import random
 lives = 6
 
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
 word_list = ["ardvark", "baboon", "camel"]
 
+# The program code
 chosen_word = random.choice(word_list)
 chosen_list = list(chosen_word)
 
@@ -34,9 +92,11 @@ while not end_of_game:
     
     if "_" not in display:
         end_of_game = True
+        print("You WIN!!!")
     elif user_choose not in chosen_list:
         lives -= 1
         print(f"the letter {user_choose} not match")
+        print(stages[lives])
         if lives == 0:
             end_of_game = True
             print("You Lose...Game Over!")
