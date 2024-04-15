@@ -28,9 +28,8 @@ while not end_of_game:
     print("")
     user_choose = input("Guess a letter : ")
     user_choose = user_choose.lower()
-
+    
     # reveal the letter if its true
-
     for n in range(0, len(chosen_list)):
         letter = chosen_list[n]
         if user_choose == chosen_list[n]:
@@ -42,6 +41,7 @@ while not end_of_game:
     elif user_choose not in chosen_list:
         lives -= 1
         print(f"the letter {user_choose} not match")
+        print("You loss one life!")
         print(stages[lives])
         if lives == 0:
             end_of_game = True
