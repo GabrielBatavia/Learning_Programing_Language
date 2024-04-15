@@ -10,8 +10,10 @@ chosen_list = list(chosen_word)
 print(f"Pssst, the solution is {chosen_word}")
 
 # Create an empety list called display
+display = []
 for n in range(0, len(chosen_list)):
     print("_ ", end="", flush=True)
+    display += "_"
 
 
 print("")
@@ -21,9 +23,13 @@ user_choose = user_choose.lower()
 # reveal the letter if its true
 
 for n in range(0, len(chosen_list)):
+    letter = chosen_list[n]
     if user_choose == chosen_list[n]:
         print(f"{chosen_list[n]}", end="", flush=True)
+        display[n] = letter
     else:
         print("_ ", end="", flush=True)
 
 print("")
+print(display)
+
