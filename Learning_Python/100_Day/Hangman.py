@@ -18,8 +18,12 @@ print("")
 user_choose = input("Guess a letter : ")
 user_choose = user_choose.lower()
 
+# reveal the letter if its true
+
 for n in range(0, len(chosen_list)):
     if user_choose == chosen_list[n]:
-        print(chosen_list[n])
+        print(f"{chosen_list[n]}", end="", flush=True)
+    else:
+        print("_ ", end="", flush=True)
 
-
+print("")
