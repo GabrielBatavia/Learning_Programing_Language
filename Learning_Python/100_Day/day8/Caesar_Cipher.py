@@ -27,11 +27,14 @@ def decrypt(input_text, shift_number):
         
     print(f"{''.join(decoded_text)}")
 
-# Call the encrypt function
-encrypt(text, shift)
-
-# Call the decrypt function
-decrypt(text, shift)
+if direction == "encode":
+    # Call the encrypt function
+    encrypt(text, shift)
+elif direction == "decode":
+    # Call the decrypt function
+    decrypt(text, shift)
+else:
+    print("Please specify direction")
 
 
 
