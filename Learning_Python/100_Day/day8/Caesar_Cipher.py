@@ -9,13 +9,31 @@ shift = int(input("Type the shift number:\n"))
 def encrypt (input_text, shift_number):
     cipher_text = []
     for letter in input_text:
-        index_alphabet = alphabet.index(letter)
-        cipher_letter = index_alphabet + shift_number
+        position = alphabet.index(letter)
+        cipher_index = position + shift_number
         
-        cipher_text += alphabet[cipher_letter]
+        cipher_text += alphabet[cipher_index]
         
     print(f"{''.join(cipher_text)}")
         
+# The decryption function
+def decrypt(input_text, shift_number):
+    decoded_text = []
+    for letter in input_text:
+        position = alphabet.index(letter)
+        decoded_index = position - shift_number
+        
+        decoded_text += alphabet[decoded_index]
+        
+    print(f"{''.join(decoded_text)}")
+
 # Call the encrypt function
 encrypt(text, shift)
+
+# Call the decrypt function
+decrypt(text, shift)
+
+
+
+
 
