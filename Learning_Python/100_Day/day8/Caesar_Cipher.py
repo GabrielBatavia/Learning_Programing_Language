@@ -42,7 +42,7 @@ def ceaser(input_text, shift_number, the_direction):
         
         ceaser_text += alphabet[ceaser_index]
         
-    print(f"The encoded text is {''.join(ceaser_text)}")
+    print(f"The {the_direction} text is {''.join(ceaser_text)}")
 
 # Call the ceaser function
 ceaser(text, shift, direction)
