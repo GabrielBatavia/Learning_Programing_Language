@@ -39,16 +39,24 @@ def decrypt(input_text, shift_number):
 # Join the encrypt and decrypt funtion together
 def ceaser(input_text, shift_number, the_direction):
     ceaser_text = []
-    for letter in input_text:
-        position = alphabet.index(letter)
-        if the_direction == "encode":
-            ceaser_index = position + shift_number
-        elif the_direction == "decode":
-            ceaser_index = position - shift_number
-        
-        ceaser_text += alphabet[ceaser_index]
+    for char in input_text:
+        if char in alphabet:
+            position = alphabet.index(char)
+            if the_direction == "encode":
+                ceaser_index = position + shift_number
+            elif the_direction == "decode":
+                ceaser_index = position - shift_number
+            
+            ceaser_text += alphabet[ceaser_index]
+        else:
+            ceaser_text += char
         
     print(f"The {the_direction} text is {''.join(ceaser_text)}")
+
+
+# What if the user input shit greater than the len aplphabet?
+shift = shift % 26
+print(shift)
 
 # Call the ceaser function
 ceaser(text, shift, direction)
