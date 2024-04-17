@@ -1,11 +1,13 @@
 
 //make a array object
+import java.util.Scanner;
 
 // Step 1: Definisi kelas Student
 public class persiapan_uts_smstr2 {
     // Atribut untuk nama dan usia
     private String name;
     private int age;
+
 
     // Konstruktor untuk kelas Student
     public persiapan_uts_smstr2(String name, int age) {
@@ -36,6 +38,25 @@ public class persiapan_uts_smstr2 {
         }
 
         // Membuat array of object baru menggunakan for loop
-        persiapan_uts_smstr2[] murid = new persiapan_uts_smstr2[jumlah_Murid]
+        System.out.println("Masukkan jumlah murid di kelasmu");
+        Scanner sc13 = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        int jumlah_Murid = sc13.nextInt();
+
+        persiapan_uts_smstr2[] murid = new persiapan_uts_smstr2[jumlah_Murid];
+
+        for (int i=0; i<jumlah_Murid; i++) {
+            System.out.println("Masukkan namanya");
+            String name = sc.nextLine();
+
+            System.out.println("Masukkan umur nya");
+            int age = sc13.nextInt();
+            murid[i] = new persiapan_uts_smstr2(name, age);
+        }
+
+        // Menampilkan semua murid menggunakan loop
+        for (persiapan_uts_smstr2 m : murid) {
+            System.out.println(m);
+        }
     }
 }
