@@ -23,4 +23,8 @@ travel_log = [
 # Do NOT change the code above 
 
 def add_new_country(new_country, num_visit, city_list):
-    
+    new_dict_travel = {}
+    new_dict_travel.append(travel_log)
+    new_dict_travel["country"] = new_country
+    new_dict_travel["visits"] = num_visit
+    new_dict_travel["cities"] = city_list
