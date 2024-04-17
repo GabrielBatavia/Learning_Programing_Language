@@ -28,4 +28,37 @@ print(programming_dictionary["Bug"])
 # Loop throug a dictionary
 for key in programming_dictionary:
     print(programming_dictionary[key])
-    
+
+print("")
+print("")
+
+
+# Nesting list or dictionary
+
+
+capitals = {
+    "France" : "Paris",
+    "Germany" : "Berlin",
+}
+
+# Nesting a list in a dictionary
+
+travel_log = {
+    "France": {"cities_visited" : ["Paris", 
+                                   "Lille", 
+                                   "Dijon"], 
+               "total_visits": [2, 3, 4]},
+    "Germany": ["Berlin", "Hambrug", "Stuttgart"]
+}
+
+
+# Nasting dictionaries in a list
+cities_visited = {
+    {
+    "Country": "France", 
+    "cities_visited" : ["Paris", 
+                        "Lille", 
+                        "Dijon"], 
+    "total_visits": [2, 3, 4]
+    },
+}
