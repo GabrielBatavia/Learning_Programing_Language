@@ -23,41 +23,48 @@ math_operator = {"+": add,
                  "/": divide,}
 
 
-# get input from user for our argument
-num1 = int(input("Whats the first number? : "))
-num2 = int(input("Whats the second number? : "))
-    
-for key in math_operator:
-    print(key)
+def calculator():
+    # get input from user for our argument
+    num1 = int(input("Whats the first number? : "))
+    num2 = int(input("Whats the second number? : "))
+        
+    for key in math_operator:
+        print(key)
 
-operation_symbol = input("Pick an operation from the line above: ")
+    operation_symbol = input("Pick an operation from the line above: ")
 
-# get choosen operation function and call it 
-choosen_function = math_operator[operation_symbol]
-result = choosen_function(num1, num2)
-    
-print(f"{num1} {operation_symbol} {num2} = {result}")
+    # get choosen operation function and call it 
+    choosen_function = math_operator[operation_symbol]
+    result = choosen_function(num1, num2)
+        
+    print(f"{num1} {operation_symbol} {num2} = {result}")
 
-continue_calculator = True
+    continue_calculator = True
 
-while not continue_calculator == False:
-    user_answer = input("Are you want to continue to calculate? : yes or no? : ")
-    
-    if user_answer == "yes":
+    while not continue_calculator == False:
+        print("Are you want to continue to calculate? : yes for continue calculate the previous result, type restart to restart the calculator, no for exit this program")
+        user_answer = input("type here : ")
+        
+        if user_answer == "yes":
+                
+            num1 = result
+                
+            choosen_num = int(input("Whats the next number? : "))
+
+            operation_symbol = input("Pick an operation from the line above: ")
             
-        num1 = result
+            # get choosen operation function and call it 
+            choosen_function = math_operator[operation_symbol]
+            result = choosen_function(num1, choosen_num)
             
-        choosen_num = int(input("Whats the next number? : "))
+            print(f"{num1} {operation_symbol} {choosen_num} = {result}")
+        
+        elif user_answer == "restart":
+            calculator()
+            continue_calculator = False
+        else:
+            print("Bye!")
+            exit()
 
-        operation_symbol = input("Pick an operation from the line above: ")
-        
-        # get choosen operation function and call it 
-        choosen_function = math_operator[operation_symbol]
-        result = choosen_function(num1, choosen_num)
-        
-        print(f"{num1} {operation_symbol} {choosen_num} = {result}")
-        
-    
-    else:
-        print("Bye!")
-        continue_calculator = False
+
+calculator()
