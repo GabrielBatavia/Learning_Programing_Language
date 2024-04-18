@@ -27,8 +27,8 @@ math_operator = {"+": add,
 
 def calculator():
     # get input from user for our argument
-    num1 = int(input("Whats the first number? : "))
-    num2 = int(input("Whats the second number? : "))
+    num1 = float(input("Whats the first number? : "))
+    num2 = float(input("Whats the second number? : "))
         
     for key in math_operator:
         print(key)
@@ -44,14 +44,17 @@ def calculator():
     continue_calculator = True
 
     while not continue_calculator == False:
-        print("Are you want to continue to calculate? : yes for continue calculate the previous result, type restart to restart the calculator, no for exit this program")
+        print("Are you want to continue to calculate?") 
+        print("yes for continue calculate the previous result")
+        print("type restart to restart the calculator") 
+        print("no for exit this program")
         user_answer = input("type here : ")
         
         if user_answer == "yes":
                 
             num1 = result
                 
-            choosen_num = int(input("Whats the next number? : "))
+            choosen_num = (input("Whats the next number? : "))
 
             operation_symbol = input("Pick an operation from the line above: ")
             
@@ -65,8 +68,9 @@ def calculator():
             calculator()
             continue_calculator = False
         else:
-            print("Bye!")
+            print("Bye! Thanks for using this calculator")
             exit()
+
 
 
 # the main start
