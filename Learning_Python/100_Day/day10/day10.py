@@ -9,6 +9,17 @@ first_name = input("Inpur your first name : ")
 last_name = input("Input your last name : ")
 
 def format_name(f_name, l_name):
+    """_summary_
+
+    Args:
+        f_name (_type_): _description_
+        l_name (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    # The crazy is, the documentation below is written automatically
+    
     if f_name == "" or l_name == "":
         return "You didnt input your name"
     f_name = f_name.title()
