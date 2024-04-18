@@ -1,5 +1,7 @@
 # make calculator program
 
+from art import logo
+
 # add function 
 def add(n1, n2):
     return n1 + n2
@@ -66,5 +68,8 @@ def calculator():
             print("Bye!")
             exit()
 
+
+# the main start
+print(logo)
 
 calculator()
