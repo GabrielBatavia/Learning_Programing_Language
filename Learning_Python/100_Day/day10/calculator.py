@@ -33,5 +33,14 @@ operation_symbol = input("Pick an operation from the line above: ")
 
 # get choosen operation function and call it 
 choosen_function = math_operator[operation_symbol]
-result = choosen_function(num1, num2)
-print(f"{num1} {operation_symbol} {num2} = {result}")
+first_result = choosen_function(num1, num2)
+
+print(f"{num1} {operation_symbol} {num2} = {first_result}")
+
+# allow user to calculate again the first result
+num3 = int(input("Whats the third number? : "))
+operation_symbol = input("Pick an operation from the line above: ")
+choosen_function = math_operator[operation_symbol]
+second_result = choosen_function(first_result, num3)
+
+print(f"{first_result} {operation_symbol} {num3} = {second_result}")
