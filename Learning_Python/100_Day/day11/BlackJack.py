@@ -11,11 +11,16 @@ def choose_card():
 user_cards_list = []
 computer_cards_list = []
 
+user_total = 0
+computer_total = 0
+
 for i in range(2):
     user_cards_list.append(choose_card())
+    user_total += user_cards_list[i]
     computer_cards_list.append(choose_card())
-
-print(f"Your card are {user_cards_list} ")
+    computer_total += computer_cards_list[i]
+    
+print(f"Your card are {user_cards_list}, current score: {user_total} ")
 print(f"Computer first cards are [{computer_cards_list[0]}]")
 
 get_another_card = True
