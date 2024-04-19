@@ -23,29 +23,30 @@ for i in range(2):
 print(f"Your card are {user_cards_list}, current score: {user_total} ")
 print(f"Computer first cards are [{computer_cards_list[0]}]")
 
+if user_total == 21 and len(user_cards_list) == 2:
+    user_total = 0
+
 get_another_card = True
 
-while get_another_card:
+while get_another_card or user_total == 0:
     user_move = input("Are you want to get another card? yes or no? : ")
     
     if user_move == "yes":
-        user_next_card = random.choice(cards)
-        user_cards_list.append(user_next_card)
-        user_total += user_next_card
+        user_cards_list.append(choose_card())
+        user_total += user_cards_list[i]
         print(f"Your card are {user_cards_list}")
         
         if user_total > 21:
             get_another_card = False
     else:
+        print(f"Your card are {user_cards_list}")
         get_another_card = False
-
-# append the second card of the computer cards
-computer_cards_list.append(computer_first_card)
-computer_total = computer_first_card + computer_second_card
 
 print(f"Computer cards are {computer_cards_list}")
 
-if user_total > 21:
+if user_total == 0:
+    print("You Win with perfect scenario...how lucky your get ace and jack in same time!!!")
+elif user_total > 21:
     print("You loss you stupid bastard")
 elif user_total > computer_total and user_total <= 21:
     print("You win")
