@@ -3,6 +3,7 @@
 # Source
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 import random
+from art import logo
 
 
 # Functions
@@ -76,12 +77,14 @@ def play_game ():
     else:
         playing = False
     
-    
+    print()
     return playing
         
 
 # Main
 playing = True
+
+print(logo)
 
 user_desire = input("Welcome to the Blackjack house game!!! Wana play some games? yes or no : ")
 
