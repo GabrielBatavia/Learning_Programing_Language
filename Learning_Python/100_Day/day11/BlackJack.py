@@ -33,7 +33,13 @@ while get_another_card or user_total == 0:
     
     if user_move == "yes":
         user_cards_list.append(choose_card())
-        user_total += user_cards_list[i]
+        
+        if user_total > 21 and user_cards_list[i] == 11:
+            user_cards_list[i] = 1
+            user_total += user_cards_list[i]
+        else:
+            user_total += user_cards_list[i]
+            
         print(f"Your card are {user_cards_list}")
         
         if user_total > 21:
