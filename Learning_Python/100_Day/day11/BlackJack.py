@@ -1,9 +1,11 @@
 ############### Blackjack House #####################
 
+# Source
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-
 import random
 
+
+# Functions
 def choose_card():
     card = random.choice(cards)
     return card
@@ -65,3 +67,28 @@ def play_game ():
         print("You win")
     else:
         print("You lose")
+        
+    user_true_desire = input("Wana play another games? yes or no : ")
+    
+    if user_true_desire == "yes":
+        playing = True
+    
+    else:
+        playing = False
+    
+    
+    return playing
+        
+
+# Main
+playing = True
+
+user_desire = input("Welcome to the Blackjack house game!!! Wana play some games? yes or no : ")
+
+if user_desire == "yes":
+    pass
+else:
+    playing = False
+
+while playing: 
+    playing = play_game()  # Update 'playing' based on the return value from 'play_game'
