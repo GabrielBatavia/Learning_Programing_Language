@@ -32,21 +32,12 @@ def check_the_guess():
     elif user_guess == choosen_numbers:
         print("Your guess Right! Congratulations you win the game")
         still_play = False
-    
 
-def easy_games():
+def play_game():
     global user_guess, lives, still_play
     
-    while still_play and lives > 0:
-        print()
-        print(f"You have {lives} lives to guess the number")
-        user_guess = int(input("Take a guess : "))
-        check_the_guess()
-        lives -= 1 
-
-def hard_games():
-    global user_guess, lives, still_play
-    lives = 5
+    if choosen_difficulty == "hard":
+        lives = 5
     
     while still_play and lives > 0:
         print()
@@ -65,9 +56,9 @@ print(f"The choosen numbers is {choosen_numbers}")
 choosen_difficulty = input("Choose a difficulty. Type 'easy' or 'hard' : ")
 
 if choosen_difficulty == 'easy':
-    easy_games()
+    play_game()
 elif choosen_difficulty == 'hard':
-    hard_games()
+    play_game()
 else:
     print("Please enter a correct difficulty")
     exit()
