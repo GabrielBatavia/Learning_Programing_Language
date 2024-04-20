@@ -80,3 +80,14 @@ print(f"Before the change fron incrase_enemies3 : {enemies}")
 enemies = incrase_enemies3() # we should add return value in our function to the real variable
 print(f"After the change fron incrase_enemies3 : {enemies}")
 
+
+
+
+
+# Global Constants
+# we decide to never change it
+
+PI = 3,12159 # we make it upper case, this commit from every python dev
+
+
+
