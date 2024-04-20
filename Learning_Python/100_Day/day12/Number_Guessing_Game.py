@@ -8,8 +8,10 @@
 # If they run out of turns, provide feedback to the player. 
 # Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
 
+
 # Resource and global variables
 import random
+from art import logo
 numbers = list(range(1, 101))
 choosen_numbers = 0
 lives = 10
@@ -24,11 +26,11 @@ def pick_numbers():
 def check_the_guess():
     global still_play
     if user_guess > choosen_numbers:
-        print("To High")
+        print("Your guess to High, Please try again")
     elif user_guess < choosen_numbers:
-        print("To Low")
+        print("Your guess to Low, Please try again")
     elif user_guess == choosen_numbers:
-        print("You right")
+        print("Your guess Right! Congratulations you win the game")
         still_play = False
     
 
@@ -36,6 +38,7 @@ def easy_games():
     global user_guess, lives, still_play
     
     while still_play and lives > 0:
+        print()
         print(f"You have {lives} lives to guess the number")
         user_guess = int(input("Take a guess : "))
         check_the_guess()
@@ -46,12 +49,14 @@ def hard_games():
     lives = 5
     
     while still_play and lives > 0:
+        print()
         print(f"You have {lives} lives to guess the number")
         user_guess = int(input("Take a guess : "))
         check_the_guess()
         lives -= 1 
 
 # Main
+print(logo)
 print("Welcome to Number Guessing games!")
 print("Im Thingking of number between 0 and 100")
 choosen_numbers = pick_numbers()
@@ -65,3 +70,4 @@ elif choosen_difficulty == 'hard':
     hard_games()
 else:
     print("Please enter a correct difficulty")
+    exit()
