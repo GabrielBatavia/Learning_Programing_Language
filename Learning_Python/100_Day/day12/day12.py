@@ -47,3 +47,36 @@ def create_enemy():
 
 # print(new_enemy2)
 # We got error in new_enemy2 cause its count as a local scope
+
+
+# Modify Global scope
+
+enemies = "Zombie"
+
+def incrase_enemies():
+    # enemies += "Skeleton" 
+    enemies = "Skeleton"
+    print(f"enemies inside function: {enemies}")
+
+incrase_enemies()
+print(f"enemies outside function: {enemies}")
+# Actually, the enemies variable outside the funtion is defferent from inside the function
+# so in inside the function, its get created again with the local scope
+
+# if we want to change global variable scope we have to :
+
+def incrase_enemies2():
+    global enemies
+    enemies += "Skeleton" 
+    print(f"enemies inside function: {enemies}")
+    # BUT THIS WAY IS NOT RECOMMENDED
+    # cause its may make some trouble in the future
+
+# the recommended way
+def incrase_enemies3(): 
+    return enemies + " Skeleton"
+
+print(f"Before the change fron incrase_enemies3 : {enemies}")
+enemies = incrase_enemies3() # we should add return value in our function to the real variable
+print(f"After the change fron incrase_enemies3 : {enemies}")
+
