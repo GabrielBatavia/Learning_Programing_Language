@@ -27,3 +27,23 @@ def drink_potion2():
     
 drink_potion2()
 
+
+
+# Python dosent have Block scope
+
+game_level = 3
+enemies = ["Skeleton", "Zombie", "Alien"]
+
+if game_level < 5:
+    new_enemy = enemies[0]  # we can create new variable inside if statment (python allow this)
+
+print(new_enemy)
+
+# but if
+
+def create_enemy():
+    if game_level < 5:
+        new_enemy2 = enemies[0]
+
+# print(new_enemy2)
+# We got error in new_enemy2 cause its count as a local scope
