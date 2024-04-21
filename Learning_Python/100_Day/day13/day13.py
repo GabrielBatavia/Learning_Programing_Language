@@ -1,11 +1,21 @@
 ############DEBUGGING#####################
 
 # # Describe Problem
-# def my_function():
-#   for i in range(1, 20):
-#     if i == 20:
-#       print("You got it")
-# my_function()
+def my_function():
+    for i in range(1, 20):
+        if i == 20:
+            print("You got it")
+my_function()
+    
+    # my answer = The problem is we try to print something if i == 20 but in our range the last number will loop is 19
+
+
+# # The coorect is
+def my_function():
+    for i in range(1, 20 + 1):
+        if i == 20:
+            print("You got it")
+my_function()
 
 # # Reproduce the Bug
 # from random import randint
