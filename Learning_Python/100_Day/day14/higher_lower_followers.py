@@ -2,7 +2,7 @@
 from game_data import data
 import random
 account = {}
-compare_followers = 0
+right_guess = True
 
 # All function
 
@@ -26,31 +26,37 @@ def account_name_print(first_account, second_account):
     print(f"The first account is {account_name2}, {account_desc2}")
     
 def compare_followers(compare, guess):
+    global right_guess
+    
     accountcompare_followers = compare["follower_count"]
     accountguess_followers = guess["follower_count"]
     
     if accountcompare_followers > accountguess_followers:
         print("Your wrong")
+        right_guess = False
+        return right_guess
     else:
         print("Your correct")
+        return right_guess
 
 
 # Main
-account1 = get_compare()
-account2 = get_compare()  
-if account1 == account2:
-    account2 = get_compare()
+while right_guess:
+    account1 = get_compare()
+    account2 = get_compare()  
+    if account1 == account2:
+        account2 = get_compare()
 
 
-account_name_print(account1, account2)
+    account_name_print(account1, account2)
 
-user_guess = input("Which one have more following accounts? 1 or 2? : ")
+    user_guess = input("Which one have more following accounts? 1 or 2? : ")
 
-if user_guess == "1":
-    user_account = account1
-    compare_account = account2
-else:
-    compare_account = account1
-    user_account = account2
+    if user_guess == "1":
+        user_account = account1
+        compare_account = account2
+    else:
+        compare_account = account1
+        user_account = account2
 
-compare_followers(compare_account, user_account)
+    compare_followers(compare_account, user_account)
