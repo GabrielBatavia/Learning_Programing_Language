@@ -1,10 +1,13 @@
 # Source
 from game_data import data
+from art import logo
+from art import vs
 import random
 account = {}
 right_guess = True
 still_continue = False
 point = 0
+
 
 # All function
 
@@ -26,8 +29,11 @@ def account_name_print(first_account, second_account):
     account_country1 = first_account["country"]
     account_country2 = second_account["country"]
     
+    print(logo)
     print(f"The first account is {account_name1}, a {account_desc1}, from {account_country1}")
-    print(f"The first account is {account_name2}, a {account_desc2}, from {account_country2}")
+    
+    print(vs)
+    print(f"The second account is {account_name2}, a {account_desc2}, from {account_country2}")
     
 def compare_followers(compare, guess):
     global right_guess, point, still_continue
@@ -40,7 +46,7 @@ def compare_followers(compare, guess):
         right_guess = False
         return right_guess
     else:
-        print("Your correct")
+        print("You correct")
         point += 1
         still_continue = True
 
@@ -67,6 +73,7 @@ def main_game():
             compare_account = account1
             user_account = account2
 
+        print()
         compare_followers(compare_account, user_account)
         
         print(f"Your point is {point}")
