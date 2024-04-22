@@ -3,6 +3,7 @@ from game_data import data
 import random
 account = {}
 right_guess = True
+point = 0
 
 # All function
 
@@ -21,12 +22,14 @@ def account_name_print(first_account, second_account):
     account_name2 = second_account["name"]
     account_desc1 = first_account["description"]
     account_desc2 = second_account["description"]
+    account_country1 = first_account["country"]
+    account_country2 = second_account["country"]
     
-    print(f"The first account is {account_name1}, {account_desc1}")
-    print(f"The first account is {account_name2}, {account_desc2}")
+    print(f"The first account is {account_name1}, a {account_desc1}, from {account_country1}")
+    print(f"The first account is {account_name2}, a {account_desc2}, from {account_country2}")
     
 def compare_followers(compare, guess):
-    global right_guess
+    global right_guess, point
     
     accountcompare_followers = compare["follower_count"]
     accountguess_followers = guess["follower_count"]
@@ -37,26 +40,30 @@ def compare_followers(compare, guess):
         return right_guess
     else:
         print("Your correct")
-        return right_guess
+        point =+ 1
+
+def main_game():
+    while right_guess:
+        account1 = get_compare()
+        account2 = get_compare()  
+        if account1 == account2:
+            account2 = get_compare()
 
 
-# Main
-while right_guess:
-    account1 = get_compare()
-    account2 = get_compare()  
-    if account1 == account2:
-        account2 = get_compare()
+        account_name_print(account1, account2)
 
+        user_guess = input("Which one have more following accounts? 1 or 2? : ")
 
-    account_name_print(account1, account2)
+        if user_guess == "1":
+            user_account = account1
+            compare_account = account2
+        else:
+            compare_account = account1
+            user_account = account2
 
-    user_guess = input("Which one have more following accounts? 1 or 2? : ")
+        compare_followers(compare_account, user_account)
+        
+        print(f"Your point is {point}")
 
-    if user_guess == "1":
-        user_account = account1
-        compare_account = account2
-    else:
-        compare_account = account1
-        user_account = account2
-
-    compare_followers(compare_account, user_account)
+# MAIN
+main_game()
