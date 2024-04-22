@@ -3,6 +3,7 @@ from game_data import data
 import random
 account = {}
 right_guess = True
+still_continue = False
 point = 0
 
 # All function
@@ -29,7 +30,7 @@ def account_name_print(first_account, second_account):
     print(f"The first account is {account_name2}, a {account_desc2}, from {account_country2}")
     
 def compare_followers(compare, guess):
-    global right_guess, point
+    global right_guess, point, still_continue
     
     accountcompare_followers = compare["follower_count"]
     accountguess_followers = guess["follower_count"]
@@ -40,16 +41,21 @@ def compare_followers(compare, guess):
         return right_guess
     else:
         print("Your correct")
-        point =+ 1
+        point += 1
+        still_continue = True
 
 def main_game():
     while right_guess:
+        
+        
         account1 = get_compare()
         account2 = get_compare()  
         if account1 == account2:
             account2 = get_compare()
 
-
+        if still_continue == True:
+            account1 = user_account
+            
         account_name_print(account1, account2)
 
         user_guess = input("Which one have more following accounts? 1 or 2? : ")
