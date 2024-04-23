@@ -67,43 +67,14 @@ def insert_money():
     total += int(input("How many pennies?: ")) * 0.01
     return total
     
-def transaction():
-    global dolars, status_order, continue_program
-    
-    if user_order == "espresso" and dolars > espresso_cost:
-        print(f"Your total money : ${dolars}")
-        print(f"espresso cost : ${espresso_cost}")
-        
-        dolars -= espresso_cost
-        
-        print(f"here is your changes : ${dolars}")
-        print("Here you order")
-        status_order = True
-    
-    elif user_order == "latte" and dolars > latte_cost:
-        print(f"Your total money : ${dolars}")
-        print(f"latte cost : ${latte_cost}")
-        
-        dolars -= latte_cost
-        
-        print(f"here is your changes : ${dolars}")
-        print("Here you order")
-        status_order = True
-    
-    
-    elif user_order == "cappuccino" and dolars > cappuccino_cost:
-        print(f"Your total money : ${dolars}")
-        print(f"latte cost : ${cappuccino_cost}")
-        
-        dolars -= cappuccino_cost
-        
-        print(f"here is your changes : ${dolars}")
-        print("Here you order")
-        status_order = True
-    
+def transaction(drink_name, drink_cost, payment):
+    if payment >= drink_cost:
+        change = round(payment - drink_cost, 2)
+        print(f"Here is your change: ${change}")
+        return True
     else:
-        print(f"Your total money dosent enough")
-        continue_program = False
+        print("Sorry, that's not enough money. Money refunded.")
+        return False
         
 
 def get_resource():
