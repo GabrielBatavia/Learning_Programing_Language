@@ -30,24 +30,6 @@ resources = {
     "coffee": 100,
 }
 
-dolars = 0
-espresso_cost = 0
-latte_cost = 0
-cappuccino_cost = 0
-status_order = False
-continue_program = True
-
-update_water_esp = 0
-update_coffee_esp = 0
-
-update_milk_lat = 0
-update_water_lat = 0
-update_coffee_lat = 0
-
-update_milk_cap = 0
-update_water_cap = 0
-update_coffee_cap = 0
-
 
 # All function
 
@@ -77,60 +59,11 @@ def transaction(drink_name, drink_cost, payment):
         return False
         
 
-def get_resource():
-    global update_water_esp, update_coffee_esp
-    global update_milk_lat, update_water_lat, update_coffee_lat
-    global update_milk_cap, update_water_cap, update_coffee_cap
-    
-    espresso = MENU["espresso"]
-    update_ingredients_esp = espresso["ingredients"]
-         
-    update_water_esp = update_ingredients_esp["water"]
-    update_coffee_esp = update_ingredients_esp["coffee"]
+def make_coffee(drink_name, ingredients):
+    for item, amount in ingredients.items():
+        resources[item] -= amount
+    print(f"Here is your {drink_name}. Enjoy!")
         
-    latte = MENU["latte"]
-    update_ingredients_lat = latte["ingredients"]
-        
-    update_milk_lat = update_ingredients_lat["milk"]
-    update_water_lat = update_ingredients_lat["water"]
-    update_coffee_lat = update_ingredients_lat["coffee"]
-        
-    cappuccino = MENU["cappuccino"]
-    update_ingredients_cap = cappuccino["ingredients"]
-        
-    update_milk_cap = update_ingredients_cap["milk"]
-    update_water_cap = update_ingredients_cap["water"]
-    update_coffee_cap = update_ingredients_cap["coffee"]
-        
-
-def update_resource():
-    global resources, status_order
-    
-    if user_order == "espresso" and status_order == True:
-        resources["water"] = resources["water"] - update_water_esp
-        resources["coffee"] = resources["coffee"] - update_coffee_esp
-        
-        print(resources["water"])
-        print(resources["coffee"])
-        
-    elif user_order == "latte" and status_order == True:
-        resources["milk"] = resources["milk"] - update_water_lat
-        resources["water"] = resources["water"] - update_milk_lat
-        resources["coffee"] = resources["coffee"] - update_coffee_lat
-
-        print(resources["milk"])
-        print(resources["water"])
-        print(resources["coffee"])
-
-    elif user_order == "cappuccino" and status_order == True:
-        resources["milk"] = resources["milk"] - update_milk_cap
-        resources["water"] = resources["water"] - update_water_cap
-        resources["coffee"] = resources["coffee"] - update_coffee_cap
-        
-        print(resources["milk"])
-        print(resources["water"])
-        print(resources["coffee"])
-
 # Main
 
 while continue_program:
