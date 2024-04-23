@@ -89,6 +89,29 @@ def transaction():
         
         print(f"here is your changes : ${dolars}")
         print("Here you order")
+    
+    elif user_order == "latte" and dolars > latte_cost:
+        print(f"Your total money : ${dolars}")
+        print(f"latte cost : ${latte_cost}")
+        
+        dolars -= latte_cost
+        
+        print(f"here is your changes : ${dolars}")
+        print("Here you order")
+    
+    
+    elif user_order == "cappuccino" and dolars > cappuccino_cost:
+        print(f"Your total money : ${dolars}")
+        print(f"latte cost : ${cappuccino_cost}")
+        
+        dolars -= cappuccino_cost
+        
+        print(f"here is your changes : ${dolars}")
+        print("Here you order")
+    
+    else:
+        print(f"Your total money dosent enough")
+
 
 # Main
 print_menu()
