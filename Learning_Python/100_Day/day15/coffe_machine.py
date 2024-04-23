@@ -35,6 +35,7 @@ espresso_cost = 0
 latte_cost = 0
 cappuccino_cost = 0
 status_order = False
+continue_program = True
 
 update_water_esp = 0
 update_coffee_esp = 0
@@ -51,19 +52,8 @@ update_coffee_cap = 0
 # All function
 
 def print_menu():
-    global espresso_cost, cappuccino_cost, latte_cost
-    
-    espresso = MENU["espresso"]
-    espresso_cost = espresso["cost"]
-    print(f"espresso : ${espresso_cost}")
-    
-    latte = MENU["latte"]
-    latte_cost = latte["cost"]
-    print(f"latte : ${latte_cost}")
-    
-    cappuccino = MENU["cappuccino"]
-    cappuccino_cost = cappuccino["cost"]
-    print(f"cappuccino : ${cappuccino_cost}")
+    for drink, data in MENU.items():
+        print(f"{drink} : ${data['cost']}")
 
 def report_resources():
     if user_order == "report":
@@ -94,7 +84,7 @@ def insert_money():
     print(f"Your total money : ${dolars}")
     
 def transaction():
-    global dolars, status_order
+    global dolars, status_order, continue_program
     
     if user_order == "espresso" and dolars > espresso_cost:
         print(f"Your total money : ${dolars}")
@@ -129,6 +119,7 @@ def transaction():
     
     else:
         print(f"Your total money dosent enough")
+        continue_program = False
         
 
 def get_resource():
@@ -158,26 +149,40 @@ def get_resource():
         
 
 def update_resource():
-    global resources
+    global resources, status_order
     
     if user_order == "espresso" and status_order == True:
-        resources["water"] -= update_water_esp
-        resources["coffe"] -= update_coffee_esp
+        resources["water"] = resources["water"] - update_water_esp
+        resources["coffee"] = resources["coffee"] - update_coffee_esp
+        
+        print(resources["water"])
+        print(resources["coffee"])
         
     elif user_order == "latte" and status_order == True:
-        resources["milk"] -= update_water_lat
-        resources["water"] -= update_milk_lat
-        resources["coffe"] -= update_coffee_lat
-    
+        resources["milk"] = resources["milk"] - update_water_lat
+        resources["water"] = resources["water"] - update_milk_lat
+        resources["coffee"] = resources["coffee"] - update_coffee_lat
+
+        print(resources["milk"])
+        print(resources["water"])
+        print(resources["coffee"])
+
     elif user_order == "cappuccino" and status_order == True:
-        resources["milk"] -= update_milk_cap
-        resources["water"] -= update_water_cap
-        resources["coffe"] -= update_coffee_cap
+        resources["milk"] = resources["milk"] - update_milk_cap
+        resources["water"] = resources["water"] - update_water_cap
+        resources["coffee"] = resources["coffee"] - update_coffee_cap
+        
+        print(resources["milk"])
+        print(resources["water"])
+        print(resources["coffee"])
 
 # Main
-get_resource()
-print_menu()
-user_order = input("What you want to order? espresso? latte? or cappuccino? : ")
-report_resources()
-insert_money()
-transaction()
+
+while continue_program:
+    
+    get_resource()
+    print_menu()
+    user_order = input("What you want to order? espresso? latte? or cappuccino? : ")
+    report_resources()
+    insert_money()
+    transaction()
