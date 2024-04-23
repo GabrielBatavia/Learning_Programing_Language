@@ -71,13 +71,24 @@ def make_coffee(drink_name, ingredients):
         resources[item] -= amount
     print(f"Here is your {drink_name}. Enjoy!")
         
-# Main
 
-while continue_program:
-    
-    get_resource()
-    print_menu()
-    user_order = input("What you want to order? espresso? latte? or cappuccino? : ")
-    report_resources()
-    insert_money()
-    transaction()
+def coffee_machine():
+    continue_program = True
+    while continue_program:
+        print_menu()
+        choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
+        if choice == 'off':
+            continue_program = False
+        elif choice == 'report':
+            report_resources()
+        elif choice in MENU:
+            drink = MENU[choice]
+            if check_resources(drink["ingredients"]):
+                payment = insert_money()
+                if transaction(choice, drink["cost"], payment):
+                    make_coffee(choice, drink["ingredients"])
+        else:
+            print("Invalid selection. Please choose a valid product.")
+
+coffee_machine()
+
