@@ -111,9 +111,32 @@ def transaction():
     
     else:
         print(f"Your total money dosent enough")
+        
+
+def get_resource():
+        espresso = MENU["espresso"]
+        update_ingredients_esp = espresso["ingredients"]
+         
+        update_water_esp = update_ingredients_esp["water"]
+        update_coffe_esp = update_ingredients_esp["coffe"]
+        
+        latte = MENU["latte"]
+        update_ingredients_lat = latte["ingredients"]
+        
+        update_milk_lat = update_ingredients_lat["milk"]
+        update_water_lat = update_ingredients_lat["water"]
+        update_coffe_lat = update_ingredients_lat["coffe"]
+        
+        cappuccino = MENU["cappuccino"]
+        update_ingredients_cap = cappuccino["ingredients"]
+        
+        update_milk_cap = update_ingredients_cap["milk"]
+        update_water_cap = update_ingredients_cap["water"]
+        update_coffe_cap = update_ingredients_cap["coffe"]
 
 
 # Main
+get_resource()
 print_menu()
 user_order = input("What you want to order? espresso? latte? or cappuccino? : ")
 report_resources()
