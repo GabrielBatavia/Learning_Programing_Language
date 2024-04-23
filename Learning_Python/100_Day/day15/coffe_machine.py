@@ -1,3 +1,4 @@
+# Resource
 MENU = {
     "espresso": {
         "ingredients": {
@@ -30,6 +31,7 @@ resources = {
     "coffee": 100,
 }
 
+profit = 0
 
 # All function
 
@@ -40,6 +42,8 @@ def print_menu():
 def report_resources():
     for resource, amount in resources.items():
         print(f"{resource} : {amount}")
+    
+    print(f"our coffe shop profit: ${profit}")
         
 def check_resources(drink_ingredients):
     for item, amount_needed in drink_ingredients.items():
@@ -57,8 +61,10 @@ def insert_money():
     return total
     
 def transaction(drink_name, drink_cost, payment):
+    global profit
     if payment >= drink_cost:
         change = round(payment - drink_cost, 2)
+        profit += drink_cost
         print(f"Here is your change: ${change}")
         return True
     else:
@@ -75,6 +81,7 @@ def make_coffee(drink_name, ingredients):
 def coffee_machine():
     continue_program = True
     while continue_program:
+        print()
         print_menu()
         choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
         if choice == 'off':
@@ -90,5 +97,7 @@ def coffee_machine():
         else:
             print("Invalid selection. Please choose a valid product.")
 
+
+# main
 coffee_machine()
 
