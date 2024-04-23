@@ -30,10 +30,16 @@ resources = {
     "coffee": 100,
 }
 
+dolars = 0
+espresso_cost = 0
+latte_cost = 0
+cappuccino_cost = 0
 
 # All function
 
 def print_menu():
+    global espresso_cost, cappuccino_cost, latte_cost
+    
     espresso = MENU["espresso"]
     espresso_cost = espresso["cost"]
     print(f"espresso : ${espresso_cost}")
@@ -57,6 +63,8 @@ def report_resources():
         print(f"coffee : {coffee}")
 
 def insert_money():
+    global dolars
+    
     print("Please insert coins")
     quarters = int(input("How many quarters? : "))
     dimes = int(input("How many dimes? : "))
@@ -69,9 +77,22 @@ def insert_money():
     penny_amount = penny * 0.01
     dolars = quarters_amount + dimes_amount + nickels_amount + penny_amount
     print(f"Your total money : ${dolars}")
+    
+def transaction():
+    global dolars
+    
+    if user_order == "espresso" and dolars > espresso_cost:
+        print(f"Your total money : ${dolars}")
+        print(f"espresso cost : ${espresso_cost}")
+        
+        dolars -= espresso_cost
+        
+        print(f"here is your changes : ${dolars}")
+        print("Here you order")
 
 # Main
 print_menu()
 user_order = input("What you want to order? espresso? latte? or cappuccino? : ")
 report_resources()
 insert_money()
+transaction()
