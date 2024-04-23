@@ -56,16 +56,8 @@ def print_menu():
         print(f"{drink} : ${data['cost']}")
 
 def report_resources():
-    if user_order == "report":
-        water = resources["water"]
-        milk = resources["milk"]
-        coffee = resources["coffee"]
-        
-        print(f"water : {water}")
-        print(f"milk : {milk}")
-        print(f"coffee : {coffee}")
-        
-        update_resource()
+    for resource, amount in resources.items():
+        print(f"{resource} : {amount}")
 
 def insert_money():
     global dolars
