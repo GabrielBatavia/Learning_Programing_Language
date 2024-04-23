@@ -29,3 +29,24 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
+
+
+# All function
+
+def print_menu():
+    espresso = MENU["espresso"]
+    espresso_cost = espresso["cost"]
+    print(f"espresso : ${espresso_cost}")
+    
+    latte = MENU["latte"]
+    latte_cost = latte["cost"]
+    print(f"latte : ${latte_cost}")
+    
+    cappuccino = MENU["cappuccino"]
+    cappuccino_cost = cappuccino["cost"]
+    print(f"cappuccino : ${cappuccino_cost}")
+
+
+# Main
+print_menu()
+user_order = input("What you want to order? espreso? latte? or cappuccino? : ")
