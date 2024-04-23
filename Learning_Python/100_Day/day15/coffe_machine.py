@@ -46,7 +46,17 @@ def print_menu():
     cappuccino_cost = cappuccino["cost"]
     print(f"cappuccino : ${cappuccino_cost}")
 
+def report_resources():
+    if user_order == "report":
+        water = resources["water"]
+        milk = resources["milk"]
+        coffee = resources["coffee"]
+        
+        print(f"water : {water}")
+        print(f"milk : {milk}")
+        print(f"coffee : {coffee}")
 
 # Main
 print_menu()
-user_order = input("What you want to order? espreso? latte? or cappuccino? : ")
+user_order = input("What you want to order? espresso? latte? or cappuccino? : ")
+report_resources()
