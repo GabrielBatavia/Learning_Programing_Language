@@ -60,20 +60,12 @@ def report_resources():
         print(f"{resource} : {amount}")
 
 def insert_money():
-    global dolars
-    
-    print("Please insert coins")
-    quarters = int(input("How many quarters? : "))
-    dimes = int(input("How many dimes? : "))
-    nickels = int(input("How many nickels? : "))
-    penny = int(input("How many penny? : "))
-    
-    quarters_amount = quarters * 0.25
-    dimes_amount = dimes * 0.10
-    nickels_amount = nickels * 0.05
-    penny_amount = penny * 0.01
-    dolars = quarters_amount + dimes_amount + nickels_amount + penny_amount
-    print(f"Your total money : ${dolars}")
+    print("Please insert coins.")
+    total = int(input("How many quarters?: ")) * 0.25
+    total += int(input("How many dimes?: ")) * 0.10
+    total += int(input("How many nickels?: ")) * 0.05
+    total += int(input("How many pennies?: ")) * 0.01
+    return total
     
 def transaction():
     global dolars, status_order, continue_program
