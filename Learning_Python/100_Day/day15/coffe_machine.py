@@ -40,6 +40,13 @@ def print_menu():
 def report_resources():
     for resource, amount in resources.items():
         print(f"{resource} : {amount}")
+        
+def check_resources(drink_ingredients):
+    for item, amount_needed in drink_ingredients.items():
+        if resources[item] < amount_needed:
+            print(f"Sorry, there is not enough {item}.")
+            return False
+    return True
 
 def insert_money():
     print("Please insert coins.")
