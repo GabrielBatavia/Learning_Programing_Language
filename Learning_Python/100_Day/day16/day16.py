@@ -20,6 +20,12 @@
 # try to use package that allready exists in python comunity
 # we should install the pacakge in python extensions
 
-import prettytable
+from prettytable import PrettyTable
+table = PrettyTable()
+table.add_column("Pokemon Name", ["Pikachu", "Squirtle", "Charmander"])
+table.add_column("Type", ["Electric", "Water", "Fire"])
 
+print(table)
 
+table.align = "l"
+print(table)
