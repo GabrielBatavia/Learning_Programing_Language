@@ -17,7 +17,17 @@ class Person:
         self.id = person_id
         self.username = username
         self.followers = 0 # we can setting default value so its not always have to in parameters
-
+        self.following = 0
+        
+    def follow(self, person):
+        person.followers += 1
+        self.following += 1
+        
 person1 = Person("001", "Shalom")
-print(person1.id)
-print(person1.username)
+person2 = Person("002", "Gabriel")
+
+person1.follow(person2)
+print(person1.followers)
+print(person1.following)
+print(person2.followers)
+print(person2.following)
