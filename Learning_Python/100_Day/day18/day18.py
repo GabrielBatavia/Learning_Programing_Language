@@ -39,10 +39,22 @@ def make_hexagon():
         tono.forward(100)
         tono.left(60)
 
+def make_heptagon():
+    for i in range(7):
+        tono.forward(100)
+        tono.left(51.43)
+
+def make_octagon():
+    for i in range(8):
+        tono.forward(100)
+        tono.left(45)
+
 make_triangle()
 make_square()
 make_pentagon()
 make_hexagon()
+make_heptagon()
+make_octagon()
 
 
 screen = Screen()
