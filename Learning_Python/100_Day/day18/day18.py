@@ -48,14 +48,28 @@ def make_octagon():
     for i in range(8):
         tono.forward(100)
         tono.left(45)
+        
+def make_nonagon():
+    for i in range(9):
+        tono.forward(100)
+        tono.left(40)
 
-make_triangle()
-make_square()
-make_pentagon()
-make_hexagon()
-make_heptagon()
-make_octagon()
+def make_decagon():
+    for i in range(10):
+        tono.forward(100)
+        tono.left(36)
 
+def make_the_shapes():
+    make_triangle()
+    make_square()
+    make_pentagon()
+    make_hexagon()
+    make_heptagon()
+    make_octagon()
+    make_nonagon()
+    make_decagon()
+
+make_the_shapes()
 
 screen = Screen()
 screen.exitonclick()
