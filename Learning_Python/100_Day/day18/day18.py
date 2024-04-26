@@ -94,21 +94,19 @@ moving = ["forward", "backward"]
 corner = ["left", "right"]
 colours = ["red", "green", "yellow", "blue", "purple", "brown", "black"]
 
-r = 0
-g = 0
-b = 0
 def random_rgb():
-    global r, g, b
     r = random.randint(0, 255)
     g = random.randint(0, 255)
     b = random.randint(0, 255)
+    random_rgb = (r, g, b)
+    return random_rgb
 
 def random_walk():
     for i in range(1000):
         random_rgb()
         tono.pensize(15)
         tono.speed(150)
-        tono.pencolor(r,g,b)
+        tono.pencolor(random_rgb())
         random_move = random.choice(moving)
         random_corner = random.choice(corner)
         if random_move == "forward" and random_corner == "left":
