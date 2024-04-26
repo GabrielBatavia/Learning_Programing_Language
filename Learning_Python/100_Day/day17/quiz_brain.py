@@ -22,4 +22,10 @@ class QuizBrain:
             print("Thats wrong")
         
         print(f"The correct asnwer was : {correct}") 
-        print(f"Your poin now is : {self.poin}")
+        print(f"Your poin now is : {self.poin}/{self.question_number}")
+        print()
+    
+    def print_final_score(self):
+        print(f"You completed the Quiz")
+        print(f"Your final score is : {self.poin}/{len(self.question_list)}")
+        

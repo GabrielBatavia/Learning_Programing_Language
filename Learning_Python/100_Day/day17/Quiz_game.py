@@ -15,3 +15,5 @@ Quiz = QuizBrain(question_bank)
 
 while Quiz.still_has_question():
     Quiz.next_question()
+
+Quiz.print_final_score()
