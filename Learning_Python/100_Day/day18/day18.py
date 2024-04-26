@@ -93,7 +93,9 @@ corner = ["left", "right"]
 colours = ["red", "green", "yellow", "blue", "purple", "brown", "black"]
 
 def random_walk():
-    for i in range(100):
+    for i in range(1000):
+        tono.pensize(15)
+        tono.speed(150)
         tono.pencolor(random.choice(colours))
         random_move = random.choice(moving)
         random_corner = random.choice(corner)
