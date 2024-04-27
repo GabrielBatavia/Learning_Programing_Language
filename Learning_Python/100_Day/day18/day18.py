@@ -104,7 +104,7 @@ def random_rgb():
 def random_walk():
     for i in range(1000):
         random_rgb()
-        tono.pensize(15)
+        tono.pensize(10)
         tono.speed(150)
         tono.pencolor(random_rgb())
         random_move = random.choice(moving)
@@ -121,8 +121,20 @@ def random_walk():
         elif random_move == "backward" and random_corner == "right":
             tono.backward(random.randint(10, 50))
             tono.right(90)
-    
-random_walk()
+#random_walk()
+
+
+#challenge 5
+# make a spirograph
+
+def make_spirograph():
+    tono.pensize(5)
+    for i in range(100):
+        tono.pencolor(random_rgb())
+        tono.circle(100)
+        tono.left(10)
+
+make_spirograph()
 
 screen = Screen()
 screen.exitonclick()
