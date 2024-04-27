@@ -4,7 +4,7 @@ import random
 
 tono = Turtle()
 tono.shape("turtle")
-tono.color("green", "yellow")
+tono.color("green", "green")
 turtle.colormode(255)
 
 # challenge 1 ## make a square
@@ -128,7 +128,8 @@ def random_walk():
 # make a spirograph
 
 def make_spirograph():
-    tono.pensize(5)
+    tono.pensize(3)
+    tono.speed(10)
     for i in range(100):
         tono.pencolor(random_rgb())
         tono.circle(100)
