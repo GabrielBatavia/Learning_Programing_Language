@@ -2,6 +2,7 @@ import os
 import colorgram
 from turtle import Turtle, Screen
 import turtle
+import random
 
 # Print the current working directory
 # print("Current Working Directory: ", os.getcwd())
@@ -26,22 +27,29 @@ tono = Turtle()
 tono.shape("turtle")
 tono.color("green")
 turtle.colormode(255)
-tono.pensize(10)
+tono.pensize(20)
+tono.speed("fast")
+tono.hideturtle()
 
 number_of_dots = 100
 
 def make_the_dots():
-    color_index = (len(color_list) - 1)
-    for i in range(1, number_of_dots):
-        tono.pencolor(color_list[color_index])
+    start_position()
+    for i in range(1, number_of_dots + 1):
+        tono.pencolor(random.choice(color_list))
         tono.pd()
         tono.forward(1)
         tono.pu()
-        tono.forward(20)
-        color_index -= 1
+        tono.forward(49)
         
         if i % 10 == 0:
             next_positions()
+
+def start_position():
+    tono.pu()
+    tono.setheading(255)
+    tono.forward(300)
+    tono.setheading(0)
 
 def next_positions():
     tono.setheading(90)
