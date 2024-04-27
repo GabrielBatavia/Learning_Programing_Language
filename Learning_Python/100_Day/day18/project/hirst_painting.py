@@ -30,11 +30,14 @@ tono.pensize(10)
 
 
 def make_the_dots():
+    color_index = (len(color_list) - 1)
     for i in range(10):
+        tono.pencolor(color_list[color_index])
         tono.pd()
         tono.forward(1)
         tono.pu()
         tono.forward(20)
+        color_index -= 1
 
 make_the_dots()
 
