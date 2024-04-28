@@ -7,6 +7,7 @@ screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("My Snake Game")
+screen.tracer(0)
 
 # set the snake
 
@@ -23,11 +24,10 @@ for position in starting_positions:
     segments.append(snake)
 
 while game_on:
+    screen.update()
+    time.sleep(0.1)
     for seg in segments:
-        seg.forward(100)
-        seg.left(90)
-        screen.update()
-        time.sleep(1)
+        seg.forward(20)
 
 
 
