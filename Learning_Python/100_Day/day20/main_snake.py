@@ -7,13 +7,16 @@ screen.bgcolor("black")
 screen.title("My Snake Game")
 
 
+# create the snake body
+snake = Turtle(shape="square")
+snake.shapesize(stretch_len=3)
+snake.color("white")
 
 
 
 
 
-
-
+ 
 
 
 
