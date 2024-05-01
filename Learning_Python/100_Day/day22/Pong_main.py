@@ -10,13 +10,17 @@ screen.title("PONG GAME")
 screen.tracer(0)
 
 # set up the paddle
-paddle = Paddle()
+l_paddle = Paddle()
+r_paddle = Paddle()
+
+l_paddle.goto(-350, 0)
+r_paddle.goto(350, 0)
 
 
 # make a move
 screen.listen()
-screen.onkey(paddle.go_up, "Up")
-screen.onkey(paddle.go_down, "Down")
+screen.onkey(l_paddle.go_up, "Up")
+screen.onkey(l_paddle.go_down, "Down")
 
 
 # set up main 
