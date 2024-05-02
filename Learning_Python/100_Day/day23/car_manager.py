@@ -5,21 +5,24 @@ MOVE_INCREMENT = 10
 from turtle import Turtle
 import random
 
-class CarManager(Turtle):
+class CarManager:
     
     def __init__(self):
-        super().__init__()
-        self.make_car()
-        
+        self.all_cars = []  
     
     def make_car(self):
-        self.shape("square")
-        self.color(random.choice(COLORS))
-        self.penup()
-        self.shapesize(stretch_wid=0.5, stretch_len=1)
-        self.goto(300, random.randint(-200,200))
-        self.setheading(180)
+        random_chance = random.randint(1, 6)
+        if random_chance == 1:
+            new_car = Turtle()
+            new_car.shape("square")
+            new_car.color(random.choice(COLORS))
+            new_car.penup()
+            new_car.shapesize(stretch_wid=0.5, stretch_len=1)
+            new_car.goto(300, random.randint(-200,200))
+            new_car.setheading(180)
+            self.all_cars.append(new_car)
         
         
     def drive(self):
-        self.forward(MOVE_INCREMENT)
+        for cars in self.all_cars:
+            cars.forward(MOVE_INCREMENT)
