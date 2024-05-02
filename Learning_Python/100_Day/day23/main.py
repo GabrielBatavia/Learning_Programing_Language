@@ -37,7 +37,11 @@ while game_is_on:
     for cars in car.all_cars:
         if player.distance(cars) < 20:
             scoreboard.game_over()
-            game_is_on = False  
+            game_is_on = False 
+    
+    if player.ycor() > 250:
+        scoreboard.scoring()
+        player.restart()
     
 
 
