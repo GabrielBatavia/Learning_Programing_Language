@@ -11,7 +11,6 @@ screen.setup(width=600, height=600)
 screen.tracer(0)
 
 
-
 #set up player
 player = Player()
 
@@ -19,6 +18,8 @@ player = Player()
 #set up the car
 car = CarManager()
 
+# Set up scoreboard
+scoreboard = Scoreboard()
 
 #set up gameplay moving
 screen.listen()
@@ -31,6 +32,13 @@ while game_is_on:
     
     car.make_car()
     car.drive()
+    
+    #Detect when our cars is hit the player
+    for cars in car.all_cars:
+        if player.distance(cars) < 20:
+            scoreboard.game_over()
+            game_is_on = False  
+    
 
 
 # exit
