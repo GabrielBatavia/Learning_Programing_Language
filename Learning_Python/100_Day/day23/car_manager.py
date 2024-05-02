@@ -7,11 +7,14 @@ import random
 
 class CarManager:
     
-    def __init__(self):
-        self.all_cars = []  
+    def __init__(self, scoreboard):
+        self.all_cars = []
+        self.scoreboard = scoreboard  # Reference to the scoreboard to access the score
+
     
     def make_car(self):
-        random_chance = random.randint(1, 6)
+        level = self.get_level_based_on_score()
+        random_chance = random.randint(1, level)
         if random_chance == 1:
             new_car = Turtle()
             new_car.shape("square")
@@ -26,3 +29,21 @@ class CarManager:
     def drive(self):
         for cars in self.all_cars:
             cars.forward(MOVE_INCREMENT)
+    
+    
+    def get_level_based_on_score(self):
+        score = self.scoreboard.score
+        if score < 5:
+            return 8  # Easy level
+        elif score < 7:
+            return 7
+        elif score < 10:
+            return 6
+        elif score < 15:
+            return 5  # Normal level
+        elif score < 20:
+            return 4
+        elif score < 30:
+            return 3  # Hard level
+        else:
+            return 2  # Extreme level
