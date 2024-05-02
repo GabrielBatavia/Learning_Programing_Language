@@ -13,6 +13,12 @@ screen.tracer(0)
 #set up player
 player = Player()
 
+#set up the car
+for i in range(0, 10):
+    car = CarManager()
+    for i in range(0, 30):
+        car.drive()
+
 
 #set up gameplay moving
 screen.listen()
