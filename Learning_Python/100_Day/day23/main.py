@@ -8,7 +8,22 @@ screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
 
+
+
+#set up player
+player = Player()
+
+
+#set up gameplay moving
+screen.listen()
+screen.onkey(player.move_forward, "Up")
+
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+    
+
+
+# exit
+screen.exitonclick()
