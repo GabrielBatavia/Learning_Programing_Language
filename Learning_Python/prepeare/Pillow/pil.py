@@ -13,11 +13,14 @@ size_300 = (300, 300)
 size_100 = (100, 100)
 size_n = (100, 50)
 
-for f in os.listdir('.'):
-    if f.endswith('.png'):
-        i = Image.open(f)
-        fn, fext = os.path.splitext(f)
+#for f in os.listdir('.'):
+#    if f.endswith('.png'):
+#        i = Image.open(f)
+#        fn, fext = os.path.splitext(f)
+#        
+#        i.thumbnail(size_n) # resize our image
+#        i.save('100/{}_n{}'.format(fn, fext))
         
-        i.thumbnail(size_n) # resize our image
-        i.save('100/{}_n{}'.format(fn, fext))
-        
+
+image2 = Image.open('./rumah.png')
+image2.rotate(90).save('rumahterbalik.png')
