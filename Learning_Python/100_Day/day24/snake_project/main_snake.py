@@ -1,8 +1,8 @@
 from turtle import Screen
 import time
-from Snake import Snake
-from food import Food
-from scoreboard import Score
+from snake_project.Snake import Snake
+from snake_project.food import Food
+from snake_project.scoreboard import Score
 game_on = True
 scors = 0
 
