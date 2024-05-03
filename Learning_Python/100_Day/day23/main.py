@@ -33,6 +33,7 @@ car = CarManager(scoreboard)
 #set up gameplay moving
 screen.listen()
 screen.onkey(player.move_forward, "Up")
+screen.onkey(player.move_forward, "w")
 
 game_is_on = True
 while game_is_on:
