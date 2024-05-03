@@ -20,4 +20,18 @@ people_identified = '''
 data = json.loads(people_identified)
 
 print(type(data))
+print(type(data['people']))
 print(data)
+
+print()
+
+# access to people_identified
+for person in data['people']:
+    print(person['name'])
+    print(person['phone'])
+    print(person)
+    del person['phone']
+
+print()
+new_people = json.dumps(data, indent=2, sort_keys= True)
+print(new_people)
