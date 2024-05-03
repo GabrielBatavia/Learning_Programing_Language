@@ -10,7 +10,6 @@
 
 ## Another way with better performance
 # with this way, we dont have to worry about close syntax
-with open("my_file.txt") as file: 
-    content = file.read()
-    print(content)
+with open("new_file.txt", mode="a") as file: 
+    file.write("\nI dont know..maybe something important")
     
