@@ -1,5 +1,5 @@
 # import pillow
-from PIL import Image
+from PIL import Image, ImageFilter
 import os
 
 #image1 = Image.open("./img/img_1.png")
@@ -23,4 +23,6 @@ size_n = (100, 50)
         
 
 image2 = Image.open('./rumah.png')
-image2.rotate(90).save('rumahterbalik.png')
+#image2.rotate(90).save('rumahterbalik.png') # rotate
+
+image2.filter(ImageFilter.GaussianBlur(15)).save('rumahblur.png') # memakai filter
