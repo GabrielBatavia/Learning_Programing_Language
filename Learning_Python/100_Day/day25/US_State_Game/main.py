@@ -23,6 +23,14 @@ while len(guessed_states) < len(state_list):
     answer_state = screen.textinput(title=f"{correct_poin}/50 States Correct", prompt="Whats another states name?").title()
 
     # check the answer
+    if answer_state == "Exit":
+        missing_states = []
+        for state in state_list:
+            if state not in guessed_states:
+                missing_states.append(state)
+        new_data = pd.DataFrame(missing_states)
+        new_data.to_csv('states_to_learn.csv')
+        break
     if answer_state in state_list:
         correct_poin += 1
         guessed_states.append(answer_state)
@@ -33,5 +41,6 @@ while len(guessed_states) < len(state_list):
         t.goto(int(state_data.x), int(state_data.y))
         t.write(state_data.state.item())
         
+
 
 screen.exitonclick()
