@@ -22,7 +22,7 @@ size_n = (100, 50)
 #        i.save('100/{}_n{}'.format(fn, fext))
         
 
-image2 = Image.open('./rumah.png')
+#image2 = Image.open('./rumah.png')
 #image2.rotate(90).save('rumahterbalik.png') # rotate
 
-image2.filter(ImageFilter.GaussianBlur(15)).save('rumahblur.png') # memakai filter
+#image2.filter(ImageFilter.GaussianBlur(15)).save('rumahblur.png') # memakai filter
