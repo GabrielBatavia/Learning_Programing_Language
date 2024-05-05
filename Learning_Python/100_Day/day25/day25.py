@@ -54,3 +54,56 @@ print()
 temp_list = data["temp"].to_list()
 print(type(temp_list))
 print(temp_list)
+
+print()
+
+# get summary reguler way
+avarage_temp = sum(temp_list) / len(temp_list)
+print(avarage_temp)
+
+# get summary with pandas
+avarage_temp = data["temp"].mean()
+print(avarage_temp)
+
+# get maximum temp with pandas
+max_temp = data['temp'].max()
+print(max_temp)
+
+# get minimum temp with pandas
+min_temp = data['temp'].min()
+print(min_temp)
+
+print()
+
+# get data in columns
+# print(data['condition'])
+print(data.condition) # simple way 
+
+print()
+
+# Get data in rows
+print(data[data.day == 'Monday'])
+
+# get max temp row 
+print(data[data.temp == data.temp.max()])
+
+# get particular column in particular row
+monday = data[data.day == 'Monday']
+print(monday.condition)
+
+f_temp = monday['temp'] * 9/5 + 32
+print(f_temp)
+
+print()
+print()
+
+# Create a dataframe from scratch
+data_dict = {
+    "students": ["Any", "James", "Angela"],
+    "scores": [76, 67, 80]
+}
+
+data = pd.DataFrame(data_dict)
+print(data)
+
+data.to_csv('new_data.csv')
