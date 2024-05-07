@@ -3,16 +3,17 @@ from tkinter import *
 window = Tk()
 window.title("My first GUI program")
 window.minsize(width=600, height=300)
+window.config(padx=20, pady=20)
+
+
 
 #label
-
-
 my_label = Label(text="I am a label", font=("Arial", 24, "bold"))
-my_label.pack() # to show label in window
 # update label
 my_label.config(text="New Text")
-
-
+#my_label.pack() # to show label in window
+#my_label.place(x=100, y=0)
+my_label.grid(column=1, row=1)
 
 #Button
 
@@ -29,20 +30,24 @@ def button_clicked():
 
 #create buttons
 button = Button(text="Click me", command=button_clicked)
-button.pack()
+#button.pack()
+button.grid(column=2, row=2)
 
-
+#create buttons 2
+button2 = Button(text="Click me too", command=button_clicked)
+button2.grid(column=3, row=1)
 
 #Entry
 
 # make input field
 input = Entry(width=30)
-input.pack()
 
 # Add some text to begin with
 input.insert(END, string="Some text to begin with.")
 #Gets text in entry
 print(input.get())
+#input.pack()
+input.grid(column=4, row=3)
 
 #Text
 text = Text(height=5, width=30)
@@ -52,21 +57,21 @@ text.focus()
 text.insert(END, "Example of multi-line text entry.")
 #Get's current value in textbox at line 1, character 0
 print(text.get("1.0", END))
-text.pack()
+#text.pack()
 
 #Spinbox
 def spinbox_used():
     #gets the current value in spinbox.
     print(spinbox.get())
 spinbox = Spinbox(from_=0, to=10, width=5, command=spinbox_used)
-spinbox.pack()
+#spinbox.pack()
 
 #Scale
 #Called with current scale value.
 def scale_used(value):
     print(value)
 scale = Scale(from_=0, to=100, command=scale_used)
-scale.pack()
+#scale.pack()
 
 #Checkbutton
 def checkbutton_used():
@@ -76,7 +81,7 @@ def checkbutton_used():
 checked_state = IntVar()
 checkbutton = Checkbutton(text="Is On?", variable=checked_state, command=checkbutton_used)
 checked_state.get()
-checkbutton.pack()
+#checkbutton.pack()
 
 #Radiobutton
 def radio_used():
@@ -85,8 +90,8 @@ def radio_used():
 radio_state = IntVar()
 radiobutton1 = Radiobutton(text="Option1", value=1, variable=radio_state, command=radio_used)
 radiobutton2 = Radiobutton(text="Option2", value=2, variable=radio_state, command=radio_used)
-radiobutton1.pack()
-radiobutton2.pack()
+#radiobutton1.pack()
+#radiobutton2.pack()
 
 
 #Listbox
@@ -99,7 +104,7 @@ fruits = ["Apple", "Pear", "Orange", "Banana"]
 for item in fruits:
     listbox.insert(fruits.index(item), item)
 listbox.bind("<<ListboxSelect>>", listbox_used)
-listbox.pack()
+#listbox.pack()
 
 
 window.mainloop()
