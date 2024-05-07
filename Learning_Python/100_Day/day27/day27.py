@@ -29,3 +29,15 @@ def calculate(n, **kwargs):
     print(n)
 
 calculate(2, add=3, multiply=10)
+
+
+class Car:
+    
+    def __init__(self, **kw):
+        self.make = kw["make"]
+        self.model = kw["model"]
+        self.price = kw.get("price") # make it not cuase error if not in parameter
+
+my_car = Car(make="Nissan", model="GT-R")
+print(my_car.model)
+print(my_car.price)
