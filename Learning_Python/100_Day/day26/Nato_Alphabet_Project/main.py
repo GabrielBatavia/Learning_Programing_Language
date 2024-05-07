@@ -1,27 +1,11 @@
-student_dict = {
-    "student": ["Angela", "James", "Lily"], 
-    "score": [56, 76, 98]
-}
+import pandas as pd
 
-#Looping through dictionaries:
-for (key, value) in student_dict.items():
-    #Access key and value
-    pass
+data = pd.read_csv('./Nato_Alphabet_Project/nato_phonetic_alphabet.csv')
 
-import pandas
-student_data_frame = pandas.DataFrame(student_dict)
+data_dict = {row.letter:row.code for (index, row) in data.iterrows()}
 
-#Loop through rows of a data frame
-for (index, row) in student_data_frame.iterrows():
-    #Access index and row
-    #Access row.student or row.score
-    pass
+user_word = input("Input your word : ").upper()
 
-# Keyword Method with iterrows()
-# {new_key:new_value for (index, row) in df.iterrows()}
+user_alphabet = [data_dict[letter] for letter in user_word]
 
-#TODO 1. Create a dictionary in this format:
-{"A": "Alfa", "B": "Bravo"}
-
-#TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-
+print(user_alphabet)
