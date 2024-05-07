@@ -10,7 +10,7 @@ window = Tk()
 window.title("Miles to Kilometers Converter")
 window.config(padx=30, pady=20)
 
-miles_input = Entry(width=4)
+miles_input = Entry(width=5)
 miles_input.grid(column=1, row=1)
 
 miles_label = Label(text="Miles")
@@ -19,7 +19,7 @@ miles_label.grid(column=2, row=1)
 is_equal_label = Label(text="is equal to")
 is_equal_label.grid(column=3, row=1)
 
-kilometers_result_label = Label(text="0", width=3)
+kilometers_result_label = Label(text="0", width=5)
 kilometers_result_label.grid(column=4, row=1)
 
 kilometer_label = Label(text="Km")
