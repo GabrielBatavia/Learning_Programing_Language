@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import random
 import pyperclip
+import json
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -35,16 +36,32 @@ def save():
     website = webiste_entry.get()
     email = email_entry.get()
     password = password_entry.get()
+    new_data = {
+        website:{
+            "email": email,
+            "password": password,
+        }
+    }
     
     if len(website) > 0 and len(email) > 0 and len(password) > 0 and len(password) > 0:
         is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered:\n Email : {email} \n Password: {password} \n Are you sure to save?")
         
         if is_ok:
-        
-            with open("saved_password.txt", mode="a") as saved_password:
-                saved_password.write(f"{website} | {email} | {password}\n")
+            with open("./Password_Manager_Project/data.json", mode="r") as saved_password:
+                #json.dump(new_data, saved_password, indent=4)
+                
+                # Reading old data
+                data = json.load(saved_password)
+                # Update data
+                data.update(new_data)
+            
+            with open("./Password_Manager_Project/data.json", mode="w") as saved_password:
+                #Saving updated data
+                json.dump(data, saved_password, indent=4)
+                
                 webiste_entry.delete(0, END)
                 password_entry.delete(0, END)
+                
     else:
         messagebox.showwarning(title="WARNING", message="Please fill all of the fields")
 
@@ -57,9 +74,9 @@ window.config(padx=20, pady=20, bg="white")
 
 
 canvas = Canvas(width=200, height=200)
-logo_img = PhotoImage(file='logo.png')
+logo_img = PhotoImage(file='./Password_Manager_Project/logo.png')
 canvas.create_image(100, 100, image=logo_img)
-canvas.grid(column=1, row=0)
+canvas.grid(column=2, row=0)
 
 
 # labels
@@ -86,10 +103,13 @@ password_entry.grid(row=3, column=1, columnspan=2)
 
 
 # button
-generate_password_button = Button(text="Generate Password", command=generate_password)
-generate_password_button.grid(row=3, column=2)
+generate_password_button = Button(text="Generate Password", command=generate_password, width=15)
+generate_password_button.grid(row=3, column=3)
 
 add_button = Button(text="Add", width=35, command=save)
 add_button.grid(row=4, column=1, columnspan=2)
+
+search_button = Button(text="Search", width=15)
+search_button.grid(row=1, column=3)
 
 window.mainloop()
