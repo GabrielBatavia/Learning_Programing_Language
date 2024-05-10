@@ -37,4 +37,17 @@ else:
 
 finally:
     print("We are done")
-    
+
+print()
+
+
+# checking fail logic and raise error
+
+height = float(input("Height : "))
+weight = float(input("Weight : "))
+
+if height > 300:
+    raise ValueError("Enter your height correctly")
+
+bmi = weight / height
+print(bmi)
