@@ -9,6 +9,9 @@ import json
 #Password Generator Project
 
 def generate_password():
+    
+    password_entry.delete(0, END)
+    
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
@@ -52,7 +55,7 @@ def save():
                     # Reading old data
                     data = json.load(saved_password)
                     
-            except:
+            except FileNotFoundError:
                 with open("./Password_Manager_Project/data.json", mode="w") as saved_password:
                     json.dump(new_data, saved_password, indent=4)
                     
@@ -73,6 +76,19 @@ def save():
         messagebox.showwarning(title="WARNING", message="Please fill all of the fields")
 
 
+# ---------------------------- FIND PASSWORD ------------------------------- #
+
+def find_password():
+    website = webiste_entry.get()
+    with open("./Password_Manager_Project/data.json", mode="r") as web:
+        # Reading old data
+        data = json.load(web)
+        
+        if website in data:
+            email = data[website]["email"]
+            password = data[website]["password"]
+            messagebox.showinfo(title=website, message=f"Email : {email}\n Password : {password}")
+            
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -116,7 +132,7 @@ generate_password_button.grid(row=3, column=3)
 add_button = Button(text="Add", width=35, command=save)
 add_button.grid(row=4, column=1, columnspan=2)
 
-search_button = Button(text="Search", width=15)
+search_button = Button(text="Search", width=15, command=find_password)
 search_button.grid(row=1, column=3)
 
 window.mainloop()
