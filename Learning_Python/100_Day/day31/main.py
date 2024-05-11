@@ -30,6 +30,10 @@ def flip_card():
     canvas.itemconfig(card_word, text=Indonesia_word, fill="white")
     canvas.itemconfig(card_background, image=card_back_img)
 
+def is_known():
+    to_learn.remove(current_card)
+    next_card()
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -56,7 +60,7 @@ unknown_button.config(bg=BACKGROUND_COLOR ,highlightthickness=0)
 unknown_button.grid(row=1, column=0)
 
 check_image = PhotoImage(file="./images/right.png")
-know_button = Button(image=check_image, command=next_card)
+know_button = Button(image=check_image, command=is_known)
 know_button.config(bg=BACKGROUND_COLOR ,highlightthickness=0)
 know_button.grid(row=1, column=1)
 
