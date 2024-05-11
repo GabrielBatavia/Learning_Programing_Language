@@ -80,15 +80,24 @@ def save():
 
 def find_password():
     website = webiste_entry.get()
-    with open("./Password_Manager_Project/data.json", mode="r") as web:
-        # Reading old data
-        data = json.load(web)
-        
+    
+    try:
+        with open("./Password_Manager_Project/data.json", mode="r") as web:
+            # Reading old data
+            data = json.load(web)
+            
+    except FileNotFoundError:
+        messagebox.showinfo(title="Error", message="No Data File Found")
+    
+    else:
         if website in data:
             email = data[website]["email"]
             password = data[website]["password"]
             messagebox.showinfo(title=website, message=f"Email : {email}\n Password : {password}")
+        else:
+            messagebox.showinfo(title="Error", message=f"You dont have email or password saved for {website} website")  
             
+             
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
