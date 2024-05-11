@@ -47,18 +47,25 @@ def save():
         is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered:\n Email : {email} \n Password: {password} \n Are you sure to save?")
         
         if is_ok:
-            with open("./Password_Manager_Project/data.json", mode="r") as saved_password:
-                #json.dump(new_data, saved_password, indent=4)
+            try:
+                with open("./Password_Manager_Project/data.json", mode="r") as saved_password:
+                    # Reading old data
+                    data = json.load(saved_password)
+                    
+            except:
+                with open("./Password_Manager_Project/data.json", mode="w") as saved_password:
+                    json.dump(new_data, saved_password, indent=4)
+                    
+            else:
                 
-                # Reading old data
-                data = json.load(saved_password)
                 # Update data
                 data.update(new_data)
+                    
+                with open("./Password_Manager_Project/data.json", mode="w") as saved_password:    
+                    #Saving updated data
+                    json.dump(data, saved_password, indent=4)
             
-            with open("./Password_Manager_Project/data.json", mode="w") as saved_password:
-                #Saving updated data
-                json.dump(data, saved_password, indent=4)
-                
+            finally:
                 webiste_entry.delete(0, END)
                 password_entry.delete(0, END)
                 
