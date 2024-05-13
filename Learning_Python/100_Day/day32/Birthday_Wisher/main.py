@@ -6,7 +6,7 @@ import random
 import smtplib
 
 MY_EMAIL = "xaveriusgabriel10@gmail.com"
-PASSWORD = ""
+PASSWORD = "wtsbzslxwdunojwf"
 
 today = (dt.datetime.now().month, dt.datetime.now().day)
 data = pd.read_csv("./Birthday_Wisher/birthdays.csv")
