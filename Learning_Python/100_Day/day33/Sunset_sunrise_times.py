@@ -10,15 +10,23 @@ parameters = {
     "fomatted": 0 
 }
 
-response = requests.get(url="https://api.sunrise-sunset.org/json", params=parameters)
-response.raise_for_status()
+def is_iss_overhead():
+    response = requests.get(url="https://api.sunrise-sunset.org/json", params=parameters)
+    response.raise_for_status()
 
-data = response.json()
-sunrise = data["results"]["sunrise"]
-sunset = data["results"]["sunset"]
+    data = response.json()
+    sunrise = data["results"]["sunrise"]
+    sunset = data["results"]["sunset"]
 
-print(f"Sunrise in malang will be in : {sunrise}")
-print(f"Sunset in malang will be in : {sunset}")
+    iss_latitude = float(data["iss_position"]["latitude"])
+    iss_longitude = float(data["iss_position"]["longitude"])
 
-time_now = datetime.now()
-print(f"Your time now is : {time_now}")
+    print(f"Sunrise in malang will be in : {sunrise}")
+    print(f"Sunset in malang will be in : {sunset}")
+
+    time_now = datetime.now()
+    print(f"Your time now is : {time_now}")
+
+    if MY_LAT - 5 <= iss_latitude <= MY_LAT + 5 and MY_LNG - 5 <= iss_longitude <= MY_LNG + 5:
+        return True
+    
