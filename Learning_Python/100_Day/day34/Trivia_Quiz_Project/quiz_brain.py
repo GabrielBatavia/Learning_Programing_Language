@@ -27,5 +27,5 @@ class QuizBrain:
         else:
             print("That's wrong.")
 
-        print(f"Your current score is: {self.score}/{self.question_number}")
-        print("\n")
+        #print(f"Your current score is: {self.score}/{self.question_number}")
+        #print("\n")
