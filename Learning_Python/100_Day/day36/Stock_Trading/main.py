@@ -7,12 +7,14 @@ COMPANY_NAME = "Tesla Inc"
 
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
-API_KEY = os.environ.get('API_KEY')
+STOCK_API_KEY = os.environ.get('API_KEY')
+NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
+
 
 parameters = {
     "function": "TIME_SERIES_DAILY",
     "symbol": "TSLA",
-    "apikey": API_KEY
+    "apikey": STOCK_API_KEY
 }
 
 ## STEP 1: Use https://www.alphavantage.co/documentation/#daily
@@ -25,7 +27,7 @@ response = requests.get(url=STOCK_ENDPOINT, params=parameters)
 response.raise_for_status()
 
 data = response.json()
-data = data["Time Series (Daily)"]
+data = data['Time Series (Daily)']
 
 data_list = [value for (key, value) in data.items()]
 yesterday_data = data_list[0]
@@ -52,9 +54,16 @@ print(diff_percent)
     ## STEP 2: https://newsapi.org/ 
     # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
 
-if diff_percent > 5:
-    print("Get News")
-
+if diff_percent > 0:
+    news_params = {
+        "apiKey": NEWS_API_KEY,
+        "qInTitle": COMPANY_NAME,
+    }
+    news_response = requests.get(NEWS_ENDPOINT, params=news_params)
+    news = news_response.json()
+    articles = news["articles"]
+    print(articles)
+    
 #TODO 6. - Instead of printing ("Get News"), use the News API to get articles related to the COMPANY_NAME.
 
 #TODO 7. - Use Python slice operator to create a list that contains the first 3 articles. Hint: https://stackoverflow.com/questions/509211/understanding-slice-notation
