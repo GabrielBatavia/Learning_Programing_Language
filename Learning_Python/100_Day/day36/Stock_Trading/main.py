@@ -1,6 +1,6 @@
 import requests
 import os
-
+from twilio.rest import Client
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -9,6 +9,9 @@ STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 STOCK_API_KEY = os.environ.get('API_KEY')
 NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
+
+account_sid = os.environ.get('ACCOUNT_SID')
+auth_token = os.environ.get('AUTH_TOKEN')
 
 
 parameters = {
@@ -68,7 +71,13 @@ if diff_percent > 0:
     
     formatted_articles = [f"Headline: {article['title']}. \n Brief: {article['description']}" for article in three_articles]
     
-    
+    for article in formatted_articles:
+        client = Client(account_sid, auth_token)
+        message = client.messages.create(
+            body = article,
+            from_ = "+17209243744",
+            to = "+6285157677512"
+        )
 
 
 #Optional TODO: Format the message like this: 
