@@ -1,10 +1,15 @@
 import requests
+import os
 from twilio.rest import Client
 
 MY_LAT = -6.175110
 MY_LNG = 106.865036
 
-api_key = "551bfd1aedf3be81762a1a1835da73bd"
+
+# HOW TO HIDE API KEYS
+# $env:API_NAME = "API KEY"
+
+api_key = os.environ.get('OWN_API_KEY')
 account_sid = "ACce17cd502cf4beb423025d650fa5ae2d"
 auth_token = "6b147837bcc5d7e358f0e046e7dbb4ee"
 
