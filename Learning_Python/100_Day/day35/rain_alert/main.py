@@ -10,8 +10,8 @@ MY_LNG = 106.865036
 # $env:API_NAME = "API KEY"
 
 api_key = os.environ.get('OWN_API_KEY')
-account_sid = "ACce17cd502cf4beb423025d650fa5ae2d"
-auth_token = "6b147837bcc5d7e358f0e046e7dbb4ee"
+account_sid = os.environ.get('ACCOUNT_SID')
+auth_token = os.environ.get('AUTH_TOKEN')
 
 weather_params = {
     "lat": MY_LAT,
