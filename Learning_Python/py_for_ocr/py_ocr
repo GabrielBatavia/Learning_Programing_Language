@@ -1,0 +1,35 @@
+import pytesseract
+from pdf2image import convert_from_path
+from docx import Document
+import os
+
+# Poopler path
+# C:\Users\USER\Documents\poppler-24.05.0
+
+# Path ke Tesseract OCR executable (sesuaikan dengan path di sistemmu)
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+# Fungsi untuk melakukan OCR pada PDF dan menyimpan hasilnya dalam dokumen Word
+def pdf_to_word(pdf_path, output_word_path):
+    # Konversi halaman PDF menjadi gambar
+    images = convert_from_path(pdf_path)
+
+    # Buat dokumen Word baru
+    doc = Document()
+
+    # Lakukan OCR pada setiap gambar dan tambahkan teks ke dokumen Word
+    for image in images:
+        text = pytesseract.image_to_string(image, lang='eng')  # Sesuaikan dengan bahasa yang diinginkan
+        doc.add_paragraph(text)
+
+    # Simpan dokumen Word
+    doc.save(output_word_path)
+
+# Path ke file PDF dan output Word
+pdf_path = './entry2.pdf'
+output_word_path = './output.docx'
+
+# Jalankan fungsi
+pdf_to_word(pdf_path, output_word_path)
+
+print(f"OCR selesai. Hasil disimpan di {output_word_path}")
