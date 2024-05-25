@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-with open("./website.html", encoding='utf-8') as html:
+with open("../scraping_web/website.html", encoding='utf-8') as html:
     content = html.read()
 
 soup = BeautifulSoup(content, 'html.parser')
