@@ -1,5 +1,13 @@
+import os
+from dotenv import load_dotenv
 import requests as req
 from bs4 import BeautifulSoup
+import spotipy
+from spotipy.oauth2 import SpotifyOAuth
+
+# Load environment variables from .env file
+load_dotenv()
+
 
 # Function to scrape song titles from a given Billboard Hot 100 URL
 def scrape_song_titles(url):
@@ -21,6 +29,20 @@ def scrape_song_titles(url):
     song_titles = [song.get_text(strip=True) for song in song_title_elements]
 
     return song_titles
+
+
+sp = spotipy.Spotify(
+    auth_manager=SpotifyOAuth(
+        scope="playlist-modify-private",
+        redirect_uri="http://example.com",
+        client_id=os.getenv('Client_ID'),
+        client_secret=os.getenv('Client_secret'),
+        show_dialog=True,
+        cache_path="token.txt",
+        username="Gabrielbatavia", 
+    )
+)
+user_id = sp.current_user()["id"]
 
 # Prompting the user for a date to travel
 date = input("Which time you want to travel? Type the date in this format YYYY-MM-DD: ")
