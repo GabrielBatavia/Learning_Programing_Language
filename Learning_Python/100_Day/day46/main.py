@@ -10,6 +10,12 @@ def scrape_song_titles(url):
 
     # Finding the song title elements using the correct selector
     song_title_elements = soup.select("li.lrv-u-width-100p h3")
+    
+    # explaining the song title elements scrape
+    # The selector li.lrv-u-width-100p h3 is a CSS selector that targets:
+    #li: List items (<li> elements)
+    #.lrv-u-width-100p: List items with the class lrv-u-width-100p
+    #h3: The <h3> elements that are descendants of the above <li> elements
 
     # Extracting the text (song titles) from the elements
     song_titles = [song.get_text(strip=True) for song in song_title_elements]
