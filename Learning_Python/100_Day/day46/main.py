@@ -1,36 +1,22 @@
 import os
 from dotenv import load_dotenv
-import requests as req
-from bs4 import BeautifulSoup
-import spotipy
-from spotipy.oauth2 import SpotifyOAuth
 
 # Load environment variables from .env file
 load_dotenv()
 
+from bs4 import BeautifulSoup
+import requests
+import spotipy
+from spotipy.oauth2 import SpotifyOAuth
 
-# Function to scrape song titles from a given Billboard Hot 100 URL
-def scrape_song_titles(url):
-    response = req.get(url)
-    website_html = response.text
+# Scraping Billboard 100
+date = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
+response = requests.get("https://www.billboard.com/charts/hot-100/" + date)
+soup = BeautifulSoup(response.text, 'html.parser')
+song_names_spans = soup.select("li ul li h3")
+song_names = [song.getText().strip() for song in song_names_spans]
 
-    soup = BeautifulSoup(website_html, "html.parser")
-
-    # Finding the song title elements using the correct selector
-    song_title_elements = soup.select("li.lrv-u-width-100p h3")
-    
-    # explaining the song title elements scrape
-    # The selector li.lrv-u-width-100p h3 is a CSS selector that targets:
-    #li: List items (<li> elements)
-    #.lrv-u-width-100p: List items with the class lrv-u-width-100p
-    #h3: The <h3> elements that are descendants of the above <li> elements
-
-    # Extracting the text (song titles) from the elements
-    song_titles = [song.get_text(strip=True) for song in song_title_elements]
-
-    return song_titles
-
-
+#Spotify Authentication
 sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
         scope="playlist-modify-private",
@@ -38,22 +24,27 @@ sp = spotipy.Spotify(
         client_id=os.getenv('Client_ID'),
         client_secret=os.getenv('Client_secret'),
         show_dialog=True,
-        cache_path="token.txt",
-        username="Gabrielbatavia", 
+        cache_path="token.txt"
     )
 )
 user_id = sp.current_user()["id"]
+print(user_id)
 
-# Prompting the user for a date to travel
-date = input("Which time you want to travel? Type the date in this format YYYY-MM-DD: ")
+#Searching Spotify for songs by title
+song_uris = []
+year = date.split("-")[0]
+for song in song_names:
+    result = sp.search(q=f"track:{song} year:{year}", type="track")
+    print(result)
+    try:
+        uri = result["tracks"]["items"][0]["uri"]
+        song_uris.append(uri)
+    except IndexError:
+        print(f"{song} doesn't exist in Spotify. Skipped.")
 
-# Constructing the URL based on the user input date
-URL = f"https://www.billboard.com/charts/hot-100/{date}/"
+#Creating a new private playlist in Spotify
+playlist = sp.user_playlist_create(user=user_id, name=f"{date} Billboard 100", public=False)
+print(playlist)
 
-# Scraping the song titles
-song_titles = scrape_song_titles(URL)
-
-# Printing the list of song titles
-print("Song titles on Billboard Hot 100 for the selected date:")
-for title in song_titles:
-    print(title)
+#Adding songs found into the new playlist
+sp.playlist_add_items(playlist_id=playlist["id"], items=song_uris)
