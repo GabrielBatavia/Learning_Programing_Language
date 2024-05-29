@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 # Keep edge browser open after open
 edge_options = webdriver.EdgeOptions()
@@ -20,6 +21,17 @@ driver.get(URL)
 search_bar = driver.find_element(By.NAME, value="q")
 print(search_bar.get_attribute("placeholder"))
 
+# Find elemetn by Link Text
+#all_portals = driver.find_element(By.LINK_TEXT, value="")
+#all_portals.click()
+
+
+# Find the "search" <input> by Name
+search = driver.find_element(By.NAME, value="")
+# Sending keyboard input to selenium
+search.send_keys("")
+# make the keyboard input will be searched for
+search.send_keys(Keys.ENTER)
 
 # End browser
 driver.quit()
