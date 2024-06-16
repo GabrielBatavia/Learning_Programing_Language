@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <title>Angela Yu</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile">
+        <img
+          src="{{ url_for('static', filename='profile.jpg') }}"
+          alt="Profile Picture"
+          class="profile-picture"
+        />
+        <h1>Angela Yu</h1>
+        <h2>Founder and CTO of <a href="#">The App Brewery</a></h2>
+        <p class="bio">
+          I am an iOS and Web Developer. I <span class="heart">❤️</span> coffee
+          and brew my own beers.
+        </p>
+      </div>
+      <div class="content">
+        <section class="books-teaching">
+          <h3>Books and Teaching</h3>
+          <ul>
+            <li>The Complete iOS App Development Bootcamp</li>
+            <li>The Complete Web Development Bootcamp</li>
+          </ul>
+        </section>
+        <section class="work-experience">
+          <h3>Work Experience</h3>
+          <table>
+            <tr>
+              <th>Dates</th>
+              <th>Work</th>
+            </tr>
+            <tr>
+              <td>2009-2010</td>
+              <td>Researcher at The Institute of Cognitive Neurosciences</td>
+            </tr>
+            <tr>
+              <td>2010-2013</td>
+              <td>Lead Developer at Tempo App</td>
+            </tr>
+            <tr>
+              <td>2013-2015</td>
+              <td>Clinical Doctor at the National Health Service</td>
+            </tr>
+          </table>
+        </section>
+        <section class="skills">
+          <h3>Skills</h3>
+          <ul>
+            <li>iOS Development <span class="stars">★★★★★</span></li>
+            <li>Web Development <span class="stars">★★★★★</span></li>
+            <li>Programming <span class="stars">★★★★☆</span></li>
+            <li>Photography <span class="stars">★★★☆☆</span></li>
+          </ul>
+        </section>
+      </div>
+      <div class="footer">
+        <a href="#">My Hobbies</a>
+        <a href="#">Contact Me</a>
+      </div>
+    </div>
+  </body>
+</html>
