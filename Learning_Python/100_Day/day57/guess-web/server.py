@@ -18,8 +18,8 @@ def submit_number():
     return render_template('submit.html', gender=gender, probability=probability) 
 
 
-@app.route('/Blog')
-def blog():
+@app.route('/blog/<num>')
+def get_blog(num):
     blog_url = "https://api.npoint.io/c790b4d5cab58020d391"
     response = requests.get(blog_url).json()
     return render_template('blog.html', posts=response)
