@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <title>Grocery Store</title>
+  </head>
+  <body>
+    <h1>Grocery Store Management System</h1>
+
+    <div class="tab-container">
+      <button class="tab">Orders</button>
+      <button class="tab">Manage Products</button>
+      <button class="tab">New Order</button>
+    </div>
+
+    <div class="order-details">
+      <h2>New Order</h2>
+      <p>Order # 123</p>
+      <p>Customer Name: Dhaval</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price per Unit</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Toothpaste</td>
+          <td>10 Rs</td>
+          <td>2</td>
+          <td>20 Rs</td>
+        </tr>
+        <tr>
+          <td>Hair Oil</td>
+          <td>7 Rs</td>
+          <td>3</td>
+          <td>21 Rs</td>
+        </tr>
+        <tr>
+          <td>Rice</td>
+          <td>10 Rs</td>
+          <td>2 kg</td>
+          <td>200 Rs</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="total">Total: <span>241 Rs</span></div>
+  </body>
+</html>

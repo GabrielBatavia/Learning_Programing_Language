@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <title>Grocery Store</title>
+  </head>
+  <body>
+    <h1>Grocery Store Management System</h1>
+
+    <div class="tab-container">
+      <button class="tab">Orders</button>
+      <button class="tab">Manage Products</button>
+      <button class="tab">New Order</button>
+    </div>
+
+    <div class="order-details">
+      <h2>Manage Products</h2>
+      <button class="tab">Add New Product</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Unit</th>
+          <th>PricePerUnit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Toothpaste</td>
+          <td>Each</td>
+          <td>20 Dollar</td>
+        </tr>
+        <tr>
+          <td>Hair Oil</td>
+          <td>Each</td>
+          <td>50 Dollar</td>
+        </tr>
+        <tr>
+          <td>Rice</td>
+          <td>Kg</td>
+          <td>100 Dollar</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -10,5 +10,13 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/new/')
+def new_orders():
+    return render_template('new_orders.html')
+
+@app.route('/manage/')
+def manage():
+    return render_template('manage_product.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
