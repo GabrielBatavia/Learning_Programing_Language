@@ -25,9 +25,22 @@ def get_all_product(connection):
             }
         )
 
-    cursor.close()
     return response
 
+def insert_new_product(connection, product):
+    cursor = connection.cursor()
+    query = (
+        """
+        INSERT INTO product
+        (product_id, product_name, uom_id,price)
+        VALUES (%s, %s, %s)
+        """
+    )
+
+    data = ()
+    
+    cursor.execute(query, data)
+    
 if __name__ == '__main__':
     try:
         connection = get_sql_connection()

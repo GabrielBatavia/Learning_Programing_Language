@@ -17,6 +17,7 @@ def get_sql_connection():
             print(err)
         raise
 
+
 if __name__ == '__main__':
     try:
         connection = get_sql_connection()
