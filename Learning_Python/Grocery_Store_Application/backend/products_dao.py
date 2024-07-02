@@ -42,6 +42,12 @@ def insert_new_product(connection, product):
     connection.commit()
     
     return cursor.lastrowid
+
+def delete_product(connection, product_id):
+    cursor = connection.cursor()
+    query = ("DELETE FROM product where product_id=" + str(product_id))
+    cursor.execute(query)
+    connection.commit()
     
 if __name__ == '__main__':
     try:
@@ -52,12 +58,7 @@ if __name__ == '__main__':
             products = get_all_product(connection)
             print("Products retrieved:", products)
             
-            new_product_id = insert_new_product(connection, {
-                'product_name': 'potato',
-                'uom_id': 1,
-                'price': 12
-            })
-            print("New product inserted with ID:", new_product_id)
+            new_product_id = delete_product(connection, 0)
     except mysql.connector.Error as err:
         print(f"Error in main execution: {err}")
     finally:
