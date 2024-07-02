@@ -32,14 +32,16 @@ def insert_new_product(connection, product):
     query = (
         """
         INSERT INTO product
-        (product_id, product_name, uom_id,price)
+        (product_name, uom_id,price)
         VALUES (%s, %s, %s)
         """
     )
 
-    data = ()
-    
+    data = (product['product_name'], product['uom_id'], product['price'])
     cursor.execute(query, data)
+    connection.commit()
+    
+    return cursor.lastrowid
     
 if __name__ == '__main__':
     try:
@@ -49,6 +51,13 @@ if __name__ == '__main__':
             # Example usage
             products = get_all_product(connection)
             print("Products retrieved:", products)
+            
+            new_product_id = insert_new_product(connection, {
+                'product_name': 'potato',
+                'uom_id': 1,
+                'price': 12
+            })
+            print("New product inserted with ID:", new_product_id)
     except mysql.connector.Error as err:
         print(f"Error in main execution: {err}")
     finally:
